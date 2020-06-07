@@ -1,0 +1,351 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+MERGED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:3:1-66:12
+MERGED from [:GoogleAIDL:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\9b906376d339f57faf10e9cce9070a62\AndroidManifest.xml:2:1-12:12
+MERGED from [:androidx.customview.customview-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a43eb4d5123baabfc263157d45ec4ec3\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.viewpager.viewpager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\42f51efb189aaaf28b7a93d55fc548b1\AndroidManifest.xml:17:1-22:12
+MERGED from [:common:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\ea6e85ac2444b4028940d08e7414ca87\AndroidManifest.xml:2:1-12:12
+MERGED from [:androidx.arch.core.core-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\27dcefd1cbd589ec7dc2a5e2c2e2f4c5\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.lifecycle.lifecycle-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\184816a3b26e107a13b11bf98a2ee3e9\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.documentfile.documentfile-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7650bc5930be68ad5bca22752264abfc\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.legacy.legacy-support-core-utils-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d9b879b64fd6d9584171c413020c8a34\AndroidManifest.xml:17:1-22:12
+MERGED from [:UnityAdsAndroidPlugin:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\845735f645aae0ac34277be595261f78\AndroidManifest.xml:2:1-11:12
+MERGED from [:androidx.slidingpanelayout.slidingpanelayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\134dc0a4faad746743036f3429ff0e78\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.print.print-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\4f69df958a4bcf83323cb3e47846d882\AndroidManifest.xml:17:1-22:12
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:2:1-37:12
+MERGED from [:androidx.cursoradapter.cursoradapter-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\bbcf5787f111bca90c4902d48e063541\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.localbroadcastmanager.localbroadcastmanager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d1f3b2a8f0262cabecdf25ac578d07d9\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.drawerlayout.drawerlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\e17f6d267c61271fcd1144b159c9694f\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.asynclayoutinflater.asynclayoutinflater-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a5af50d44bc1ed58e28bb3dd24e8bcb7\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.lifecycle.lifecycle-livedata-core-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7a3003bd039a0b7685e8cf39a0f7aa9\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.lifecycle.lifecycle-viewmodel-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\085eb3fbf8cc77be09e25520d9dfdc9a\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.lifecycle.lifecycle-livedata-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\c6e3e27634efd27d95ce495805059c15\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.coordinatorlayout.coordinatorlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\3b21db6ca816206d6bdb68dfae9bb0e8\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.swiperefreshlayout.swiperefreshlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7c1cdc8e38a47d0404095f15598ffce\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:17:1-24:12
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:2:1-40:12
+MERGED from [:androidx.legacy.legacy-support-core-ui-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7e947cb02a275c8c21cc2451c440129f\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.loader.loader-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\afb759446b473420800316ddd96115db\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.browser.browser-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fe72d8519811d6de908dbdb67f6e9b0e\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.interpolator.interpolator-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\60437f4f325423e6027e6b047d5d8b05\AndroidManifest.xml:17:1-22:12
+MERGED from [:androidx.versionedparcelable.versionedparcelable-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\0097746d9a5c75a0e4428a78427b6a74\AndroidManifest.xml:17:1-25:12
+MERGED from [:androidx.fragment.fragment-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\840f6595b0dd48dcf0fe7a7517b56e87\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+	package
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:70-107
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:108-154
+	android:versionCode
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:1-6:12
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:11-69
+	android:installLocation
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:3:155-195
+supports-screens
+ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:3-163
+	android:largeScreens
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:78-105
+	android:smallScreens
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:21-48
+	android:normalScreens
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:49-77
+	android:xlargeScreens
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:106-134
+	android:anyDensity
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:4:135-160
+application
+ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:5:3-83
+MERGED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:5-64:19
+MERGED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:5-64:19
+MERGED from [:GoogleAIDL:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\9b906376d339f57faf10e9cce9070a62\AndroidManifest.xml:9:5-10:19
+MERGED from [:GoogleAIDL:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\9b906376d339f57faf10e9cce9070a62\AndroidManifest.xml:9:5-10:19
+MERGED from [:common:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\ea6e85ac2444b4028940d08e7414ca87\AndroidManifest.xml:9:5-10:19
+MERGED from [:common:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\ea6e85ac2444b4028940d08e7414ca87\AndroidManifest.xml:9:5-10:19
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:14:5-35:19
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:14:5-35:19
+MERGED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:22:5-89
+MERGED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:22:5-89
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:22:5-38:19
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:22:5-38:19
+MERGED from [:androidx.versionedparcelable.versionedparcelable-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\0097746d9a5c75a0e4428a78427b6a74\AndroidManifest.xml:22:5-23:19
+MERGED from [:androidx.versionedparcelable.versionedparcelable-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\0097746d9a5c75a0e4428a78427b6a74\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:5:16-48
+	android:allowBackup
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:22:18-44
+	android:icon
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml:5:49-80
+uses-sdk
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+MERGED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-11:41
+MERGED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-11:41
+MERGED from [:GoogleAIDL:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\9b906376d339f57faf10e9cce9070a62\AndroidManifest.xml:7:5-43
+MERGED from [:GoogleAIDL:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\9b906376d339f57faf10e9cce9070a62\AndroidManifest.xml:7:5-43
+MERGED from [:androidx.customview.customview-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a43eb4d5123baabfc263157d45ec4ec3\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.customview.customview-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a43eb4d5123baabfc263157d45ec4ec3\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.viewpager.viewpager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\42f51efb189aaaf28b7a93d55fc548b1\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.viewpager.viewpager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\42f51efb189aaaf28b7a93d55fc548b1\AndroidManifest.xml:20:5-44
+MERGED from [:common:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\ea6e85ac2444b4028940d08e7414ca87\AndroidManifest.xml:7:5-43
+MERGED from [:common:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\ea6e85ac2444b4028940d08e7414ca87\AndroidManifest.xml:7:5-43
+MERGED from [:androidx.arch.core.core-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\27dcefd1cbd589ec7dc2a5e2c2e2f4c5\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.arch.core.core-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\27dcefd1cbd589ec7dc2a5e2c2e2f4c5\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\184816a3b26e107a13b11bf98a2ee3e9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-runtime-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\184816a3b26e107a13b11bf98a2ee3e9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.documentfile.documentfile-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7650bc5930be68ad5bca22752264abfc\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.documentfile.documentfile-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7650bc5930be68ad5bca22752264abfc\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.legacy.legacy-support-core-utils-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d9b879b64fd6d9584171c413020c8a34\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.legacy.legacy-support-core-utils-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d9b879b64fd6d9584171c413020c8a34\AndroidManifest.xml:20:5-44
+MERGED from [:UnityAdsAndroidPlugin:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\845735f645aae0ac34277be595261f78\AndroidManifest.xml:7:5-9:41
+MERGED from [:UnityAdsAndroidPlugin:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\845735f645aae0ac34277be595261f78\AndroidManifest.xml:7:5-9:41
+MERGED from [:androidx.slidingpanelayout.slidingpanelayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\134dc0a4faad746743036f3429ff0e78\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.slidingpanelayout.slidingpanelayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\134dc0a4faad746743036f3429ff0e78\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.print.print-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\4f69df958a4bcf83323cb3e47846d882\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.print.print-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\4f69df958a4bcf83323cb3e47846d882\AndroidManifest.xml:20:5-44
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:7:5-9:41
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:7:5-9:41
+MERGED from [:androidx.cursoradapter.cursoradapter-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\bbcf5787f111bca90c4902d48e063541\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.cursoradapter.cursoradapter-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\bbcf5787f111bca90c4902d48e063541\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.localbroadcastmanager.localbroadcastmanager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d1f3b2a8f0262cabecdf25ac578d07d9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.localbroadcastmanager.localbroadcastmanager-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\d1f3b2a8f0262cabecdf25ac578d07d9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.drawerlayout.drawerlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\e17f6d267c61271fcd1144b159c9694f\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.drawerlayout.drawerlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\e17f6d267c61271fcd1144b159c9694f\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.asynclayoutinflater.asynclayoutinflater-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a5af50d44bc1ed58e28bb3dd24e8bcb7\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.asynclayoutinflater.asynclayoutinflater-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a5af50d44bc1ed58e28bb3dd24e8bcb7\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-livedata-core-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7a3003bd039a0b7685e8cf39a0f7aa9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-livedata-core-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7a3003bd039a0b7685e8cf39a0f7aa9\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-viewmodel-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\085eb3fbf8cc77be09e25520d9dfdc9a\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-viewmodel-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\085eb3fbf8cc77be09e25520d9dfdc9a\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-livedata-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\c6e3e27634efd27d95ce495805059c15\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.lifecycle.lifecycle-livedata-2.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\c6e3e27634efd27d95ce495805059c15\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.coordinatorlayout.coordinatorlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\3b21db6ca816206d6bdb68dfae9bb0e8\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.coordinatorlayout.coordinatorlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\3b21db6ca816206d6bdb68dfae9bb0e8\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.swiperefreshlayout.swiperefreshlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7c1cdc8e38a47d0404095f15598ffce\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.swiperefreshlayout.swiperefreshlayout-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\a7c1cdc8e38a47d0404095f15598ffce\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.core.core-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\000062def39b4283381ff4500f476ee7\AndroidManifest.xml:20:5-44
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:7:5-9:41
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:7:5-9:41
+MERGED from [:androidx.legacy.legacy-support-core-ui-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7e947cb02a275c8c21cc2451c440129f\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.legacy.legacy-support-core-ui-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7e947cb02a275c8c21cc2451c440129f\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.loader.loader-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\afb759446b473420800316ddd96115db\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.loader.loader-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\afb759446b473420800316ddd96115db\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.browser.browser-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fe72d8519811d6de908dbdb67f6e9b0e\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.browser.browser-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fe72d8519811d6de908dbdb67f6e9b0e\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.interpolator.interpolator-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\60437f4f325423e6027e6b047d5d8b05\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.interpolator.interpolator-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\60437f4f325423e6027e6b047d5d8b05\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.versionedparcelable.versionedparcelable-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\0097746d9a5c75a0e4428a78427b6a74\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.versionedparcelable.versionedparcelable-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\0097746d9a5c75a0e4428a78427b6a74\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.fragment.fragment-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\840f6595b0dd48dcf0fe7a7517b56e87\AndroidManifest.xml:20:5-44
+MERGED from [:androidx.fragment.fragment-1.0.0:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\840f6595b0dd48dcf0fe7a7517b56e87\AndroidManifest.xml:20:5-44
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		ADDED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+		INJECTED from E:\Joker's Wild Spades\Android\launcher\src\main\AndroidManifest.xml
+uses-feature#0x00030000
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-54
+	android:glEsVersion
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-51
+uses-feature#android.hardware.vulkan.version
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:36
+	android:required
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-33
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:9-55
+uses-permission#android.permission.INTERNET
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-67
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:12:5-67
+MERGED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:12:5-67
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:11:5-67
+MERGED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:22-64
+uses-feature#android.hardware.touchscreen
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:36
+	android:required
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-33
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-52
+uses-feature#android.hardware.touchscreen.multitouch
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:5-25:36
+	android:required
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-33
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-63
+uses-feature#android.hardware.touchscreen.multitouch.distinct
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-28:36
+	android:required
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-33
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-72
+activity#com.unity3d.player.UnityPlayerActivity
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:9-50:20
+	android:screenOrientation
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:13-57
+	android:launchMode
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:13-44
+	android:hardwareAccelerated
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-48
+	android:configChanges
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:13-194
+	android:theme
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-54
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:13-66
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:13-42:29
+action#android.intent.action.MAIN
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:17-69
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:25-66
+category#android.intent.category.LAUNCHER
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:17-77
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:27-74
+meta-data#unityplayer.UnityActivity
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:13-46:40
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:17-37
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:17-57
+meta-data#android.notch_support
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:13-49:40
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:17-37
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:17-53
+meta-data#unity.splash-mode
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:9-54:33
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:54:13-30
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:53:13-45
+meta-data#unity.splash-enable
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:55:9-57:36
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:13-33
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:56:13-47
+meta-data#notch.config
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:58:9-60:50
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:60:13-47
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:59:13-40
+meta-data#unity.build-id
+ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:61:9-63:68
+	android:value
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:63:13-65
+	android:name
+		ADDED from [:unityLibrary] E:\Joker's Wild Spades\Android\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:62:13-42
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:11:22-76
+activity#com.unity3d.services.ads.adunit.AdUnitActivity
+ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:15:9-19:74
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:18:13-47
+	android:configChanges
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:17:13-170
+	android:theme
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:19:13-71
+	android:name
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:16:13-74
+activity#com.unity3d.services.ads.adunit.AdUnitTransparentActivity
+ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:20:9-24:86
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:23:13-47
+	android:configChanges
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:22:13-170
+	android:theme
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:24:13-83
+	android:name
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:21:13-85
+activity#com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity
+ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:25:9-29:86
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:28:13-48
+	android:configChanges
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:27:13-170
+	android:theme
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:29:13-83
+	android:name
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:26:13-93
+activity#com.unity3d.services.ads.adunit.AdUnitSoftwareActivity
+ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:30:9-34:74
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:33:13-48
+	android:configChanges
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:32:13-170
+	android:theme
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:34:13-71
+	android:name
+		ADDED from [:UnityAds:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\fce39099f1d38110625676a82049abfc\AndroidManifest.xml:31:13-82
+uses-permission#com.android.vending.BILLING
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:12:22-64
+uses-feature#android.software.vr.mode
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:14:5-16:36
+	android:required
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:16:9-33
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:15:9-48
+uses-feature#android.software.vr.high_performance
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:19:9-60
+activity#com.unity.purchasing.googleplay.PurchaseActivity
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:23:9-26:86
+	android:configChanges
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:25:13-170
+	android:theme
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:26:13-83
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:24:13-76
+activity#com.unity.purchasing.googleplay.VRPurchaseActivity
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:27:9-37:20
+	android:enableVrMode
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:30:13-106
+	android:configChanges
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:29:13-170
+	android:theme
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:31:13-51
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:28:13-78
+intent-filter#action:name:com.google.vr.vrcore.ACTION_NONE+category:name:com.google.intent.category.DAYDREAM
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:32:13-36:29
+action#com.google.vr.vrcore.ACTION_NONE
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:33:17-75
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:33:25-72
+category#com.google.intent.category.DAYDREAM
+ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:35:17-80
+	android:name
+		ADDED from [:GooglePlay:] C:\Users\Fox\.gradle\caches\transforms-2\files-2.1\7fe84297b43376674ede4b9a5683296b\AndroidManifest.xml:35:27-77

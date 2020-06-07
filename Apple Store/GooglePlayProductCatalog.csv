@@ -1,0 +1,4 @@
+Product ID,Published State,Purchase Type,Auto Translate,Locale; Title; Description,Auto Fill Prices,Price,Pricing Template ID
+kingpack,published,managed_by_android,false,"en_US;King Pack;King Pack for 25,000 Tokens",true,9990000,
+queenpack,published,managed_by_android,false,"en_US;Queen Pack;Queen Pack for 10,000 Tokens",true,4990000,
+jackpack,published,managed_by_android,false,"en_US;Jack Pack;Jack Pack for 5,000 Tokens",true,990000,

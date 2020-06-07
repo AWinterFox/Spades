@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package version="software5.7" xmlns="http://apple.com/itunes/importer">
+  <provider>6XJTKFBV6A</provider>
+  <team_id>6XJTKFBV6A</team_id>
+  <software>
+    <vendor_id>jokerswildspades</vendor_id>
+    <software_metadata>
+      <in_app_purchases>
+        <in_app_purchase>
+          <product_id>king</product_id>
+          <reference_name>king</reference_name>
+          <type>consumable</type>
+          <products>
+            <product>
+              <cleared_for_sale>true</cleared_for_sale>
+              <wholesale_price_tier>10</wholesale_price_tier>
+            </product>
+          </products>
+          <locales>
+            <locale name="en-US">
+              <title>King Pack</title>
+              <description>King Pack for 25,000 Tokens</description>
+            </locale>
+          </locales>
+          <review_screenshot>
+            <file_name>d012f59c62c271add9f1081356bbb8af.png</file_name>
+            <size>363950</size>
+            <checksum>d012f59c62c271add9f1081356bbb8af</checksum>
+          </review_screenshot>
+        </in_app_purchase>
+        <in_app_purchase>
+          <product_id>Queen</product_id>
+          <reference_name>Queen</reference_name>
+          <type>consumable</type>
+          <products>
+            <product>
+              <cleared_for_sale>true</cleared_for_sale>
+              <wholesale_price_tier>5</wholesale_price_tier>
+            </product>
+          </products>
+          <locales>
+            <locale name="en-US">
+              <title>Queen Pack</title>
+              <description>Queen Pack for 10,000 Tokens</description>
+            </locale>
+          </locales>
+          <review_screenshot>
+            <file_name>d012f59c62c271add9f1081356bbb8af.png</file_name>
+            <size>363950</size>
+            <checksum>d012f59c62c271add9f1081356bbb8af</checksum>
+          </review_screenshot>
+        </in_app_purchase>
+        <in_app_purchase>
+          <product_id>Jack</product_id>
+          <reference_name>Jack</reference_name>
+          <type>consumable</type>
+          <products>
+            <product>
+              <cleared_for_sale>true</cleared_for_sale>
+              <wholesale_price_tier>1</wholesale_price_tier>
+            </product>
+          </products>
+          <locales>
+            <locale name="en-US">
+              <title>Jack Pack</title>
+              <description>Jack Pack for 5,000 Tokens</description>
+            </locale>
+          </locales>
+          <review_screenshot>
+            <file_name>d012f59c62c271add9f1081356bbb8af.png</file_name>
+            <size>363950</size>
+            <checksum>d012f59c62c271add9f1081356bbb8af</checksum>
+          </review_screenshot>
+        </in_app_purchase>
+      </in_app_purchases>
+    </software_metadata>
+  </software>
+</package>

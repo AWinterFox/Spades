@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5386993879724730471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5386993879724730470}
+  - component: {fileID: 5386993879724730469}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5386993879724730470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386993879724730471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5386993879724730469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386993879724730471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5737760062e57b48abd5edd5544bf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOptions:
+    MinimumOneSpade: 1
+    TeamWinsOn13: 1
+    DoublePointsOn10Books: 1
+  camera: {fileID: 0}
+  cards:
+  - {fileID: 819889348361576769, guid: b519e80e29bb7074bbc1d3e867eb9de7, type: 3}
+  - {fileID: 461944101627733915, guid: ea0714a3e9ed6714b823a8e0289f7b09, type: 3}
+  - {fileID: 6856654759759873409, guid: 1d4fb59bb5d62b6429c8bf9ee2949887, type: 3}
+  - {fileID: 461944101627733915, guid: 38eeabb5183cf384e995ff5ba12db87e, type: 3}
+  - {fileID: 461944101627733915, guid: 9b7276183c7dca3449431a50e1d0f65f, type: 3}
+  - {fileID: 461944101627733915, guid: 36474cc732b95294eb8def58e0fb1b5c, type: 3}
+  - {fileID: 461944101627733915, guid: 4fa38d0864f2a7446a4422d1b0c08eda, type: 3}
+  - {fileID: 461944101627733915, guid: e42bb97c34378c84b8bcf690935cf0c5, type: 3}
+  - {fileID: 461944101627733915, guid: 539f2bbd6e106f646b4f821484fb5f77, type: 3}
+  - {fileID: 461944101627733915, guid: f95497f2e747a36449a96803fc72db96, type: 3}
+  - {fileID: 461944101627733915, guid: 3747a04a45a79c84eb9eb877eb67acbf, type: 3}
+  - {fileID: 461944101627733915, guid: f6779b70ec30c2341813ab7e97359213, type: 3}
+  - {fileID: 461944101627733915, guid: 08f5b5d38b920cd44873fb8b6910b000, type: 3}
+  - {fileID: 819889348361576769, guid: d038cd3b97af3014f990dcdedc6044b8, type: 3}
+  - {fileID: 6945932064310835687, guid: f4322009c5d454d45a9a4b794a892256, type: 3}
+  - {fileID: 6856654759759873409, guid: fe2a39af708a6f04eb7fb17c202d211d, type: 3}
+  - {fileID: 461944101627733915, guid: 6185756c7dfd2414088a62e07ee66be0, type: 3}
+  - {fileID: 461944101627733915, guid: 5d2e48ae8586f6343a62ba22b92599a8, type: 3}
+  - {fileID: 461944101627733915, guid: b1af8e7edc75c4e4cb1adbbc7bbd7fc4, type: 3}
+  - {fileID: 461944101627733915, guid: aa699b802df15f84fa90e08d9d3c1d92, type: 3}
+  - {fileID: 461944101627733915, guid: 3de7844a8ad091e4eb0ad3530c1a2155, type: 3}
+  - {fileID: 461944101627733915, guid: f4ce3a4ab0be5ec44995c3533f8f5eb1, type: 3}
+  - {fileID: 461944101627733915, guid: 2aa10edc0295165499431f706c5a3aae, type: 3}
+  - {fileID: 461944101627733915, guid: f2573d087a6b7a44a99f8cbcf7b6e3b4, type: 3}
+  - {fileID: 461944101627733915, guid: 4b4560c6b1446ed4fa4901826a0effb2, type: 3}
+  - {fileID: 461944101627733915, guid: e2e36c46d19ac7846a2c42f0932de090, type: 3}
+  - {fileID: 819889348361576769, guid: 2b182c83e586bd844afca7dee438383e, type: 3}
+  - {fileID: 461944101627733915, guid: 560263aba4041a64a8532d4802ae91a1, type: 3}
+  - {fileID: 6856654759759873409, guid: 6cf77ed648955d44a8104044dd1996e0, type: 3}
+  - {fileID: 461944101627733915, guid: 692dba44ad5b675429de04bb07e2ad31, type: 3}
+  - {fileID: 461944101627733915, guid: 5eddce403d76ee941b7f05600920ae6f, type: 3}
+  - {fileID: 461944101627733915, guid: 1dc68b53713517849a912e728c9d0429, type: 3}
+  - {fileID: 461944101627733915, guid: bfbc13297949ef64b9cebc69c3ac05e3, type: 3}
+  - {fileID: 461944101627733915, guid: ecf969fad0128094ea25706d18152bc7, type: 3}
+  - {fileID: 461944101627733915, guid: 82d320281323c8442bf93ba8c6bbe190, type: 3}
+  - {fileID: 461944101627733915, guid: ede34b9f02895da448f0c35008a273c4, type: 3}
+  - {fileID: 461944101627733915, guid: 353cc4618f58b1645bb6c8c38658ec94, type: 3}
+  - {fileID: 461944101627733915, guid: 79d82b6866a91a74d9a65976d7e74a5b, type: 3}
+  - {fileID: 461944101627733915, guid: d1cabac5ec6977243a78731fe162e39c, type: 3}
+  - {fileID: 819889348361576769, guid: 94a7f3740add14a4884a0c2fa07a295d, type: 3}
+  - {fileID: 6945932064310835687, guid: 549dc27c25ed3e7498fca5ad4f770700, type: 3}
+  - {fileID: 6856654759759873409, guid: 74f0a97a41c31aa42bd705ff334b51f2, type: 3}
+  - {fileID: 461944101627733915, guid: 7801fbb83ec0733408c7b3b1d98d1bed, type: 3}
+  - {fileID: 461944101627733915, guid: 25602c5911f31054a96dad5d22a837cf, type: 3}
+  - {fileID: 461944101627733915, guid: fbe04e908def1e241ab188bd20738d7e, type: 3}
+  - {fileID: 461944101627733915, guid: 9126f42c9c8983041a371c4e77837094, type: 3}
+  - {fileID: 461944101627733915, guid: ca547251ab38fc54ba6dd0b85134e4e1, type: 3}
+  - {fileID: 461944101627733915, guid: 0f4c75879218d2e46afc4f79766e7d72, type: 3}
+  - {fileID: 461944101627733915, guid: 0288a5770a43ba94e9c0ddad6efcdea4, type: 3}
+  - {fileID: 461944101627733915, guid: 8564f501aa792b042b56bf328da8afb6, type: 3}
+  - {fileID: 461944101627733915, guid: 795fbe5e7f5d8c44183e2679dbb7503c, type: 3}
+  - {fileID: 461944101627733915, guid: 1930f1be8473014488f9aafaf794d6a6, type: 3}
+  cardPosition: {fileID: 0}
+  cardStack: {fileID: 0}
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dealScreen: {fileID: 0}
+  endScreen: {fileID: 0}
+  nilBidBonus: 100
+  pointsPerBidTrick: 10
+  pointPerBag: 1
+  tenBagPenalty: 100
+  afterTrickDelay: 1.2
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []

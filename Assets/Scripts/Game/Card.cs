@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviourPun
 {
     [SerializeField]
     private Sprite backFace;
@@ -66,8 +67,13 @@ public class Card : MonoBehaviour
         }
     }
 
+    [PunRPC]
     public void Flip(CardFace face)
     {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("Flip", RpcTarget.Others, face);
+        }
         this.face = face;
         switch (face)
         {
@@ -90,18 +96,27 @@ public class Card : MonoBehaviour
         renderer.sortingOrder = i;
     }
 
-    public void MoveTo(Vector3 position)
+    [PunRPC]
+    public void MoveTo(Vector3 position, Quaternion rotation)
     {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("MoveTo", RpcTarget.Others, position);
+        }
         moveFromPosition = transform.position;
         moveToPosition = position;
+        if(rotation != null)
+        {
+            toRotation = rotation;
+            fromRotation = transform.rotation;
+        }
         moving = true;
     }
 
-    public void MoveTo(Transform target)
+    [PunRPC]
+    public void MoveToTransform(Transform target)
     {
-        MoveTo(target.position);
-        toRotation = target.rotation;
-        fromRotation = transform.rotation;
+        MoveTo(target.position, target.rotation);
     }
 
     public void SetDirection(CardDirection direction)

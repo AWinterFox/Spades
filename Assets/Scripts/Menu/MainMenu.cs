@@ -36,6 +36,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private AudioSource music;
 
+    [SerializeField]
+    private Lobby lobby;
+
     string gameId = "3594942";
     bool testMode = true;
 
@@ -121,21 +124,10 @@ public class MainMenu : MonoBehaviour
         if(GameManager.TokenBet < TokenManager.Tokens){
             GameManager.WinScore = score;
             GameManager.Tournament = null;
-            GameManager.PlayerNames = new List<string>
-            {
-                "You", GetName(),GetName(),GetName()
-            };
-            SceneManager.LoadScene("Game");
+            lobby.StartLobby();
         }else{
             panel.SetActive(true);
         }
-        
-        
-    }
-
-    private void Update()
-    {
-        tokenTotal2.text = (TokenManager.Tokens).ToString();
     }
 
     public void OnTournament()
@@ -191,19 +183,25 @@ public class MainMenu : MonoBehaviour
 
         var otherTeam = bracket.Team1 == tournament.PlayerTeam ? bracket.Team2 : bracket.Team1;
 
-        GameManager.PlayerNames = new List<string>
-        {
-            tournament.PlayerTeam.Player1,
-            otherTeam.Player1,
-            tournament.PlayerTeam.Player2,
-            otherTeam.Player2
-        };
+        //TODO: Fix tournament to new moddle.
 
-        GameManager.Tournament = tournament;
+        //GameManager.PlayerNames = new List<string>
+        //{
+        //    tournament.PlayerTeam.Player1,
+        //    otherTeam.Player1,
+        //    tournament.PlayerTeam.Player2,
+        //    otherTeam.Player2
+        //};
 
-        SceneManager.LoadScene("Game");
+        //GameManager.Tournament = tournament;
+
+        //SceneManager.LoadScene("Game");
     }
 
+    private void Update()
+    {
+        tokenTotal2.text = TokenManager.Tokens.ToString();
+    }
 }
 
 public class Tournament

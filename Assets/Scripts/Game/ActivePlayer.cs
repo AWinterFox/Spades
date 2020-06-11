@@ -13,10 +13,7 @@ public class ActivePlayer : MonoBehaviour
     private new Camera camera;
 
     [SerializeField]
-    private GameObject bidScreen;
-
-    [SerializeField]
-    private GameObject[] bidButtons;
+    private BidScreen bidScreen;
 
     private Controls controls;
 
@@ -33,6 +30,7 @@ public class ActivePlayer : MonoBehaviour
         
         controls = new Controls();   
         controls.Game.Select.performed += OnSelect;
+        bidScreen.OnBid.AddListener(PlaceBid);
     }
 
     private void OnEnable()
@@ -158,75 +156,14 @@ public class ActivePlayer : MonoBehaviour
 
     private void BidBlind(bool active)
     {
-        BidSetOptions(player.Position);
-
-        
-        
         player.Blind = active;
-    }
 
-    private void BidSetOptions(int position)
-    {
-        foreach (var bid in bidButtons)
-        {
-            bid.SetActive(true);
-        }
-
-        if (position > 2)
-        {
-            if (player.Partner.Bid <= 2)
-            {
-                bidButtons[0].SetActive(false);
-            }
-            if (player.Partner.Bid <= 1)
-            {
-                bidButtons[1].SetActive(false);
-            }
-        }
-        if (position > 3)
-        {
-            if (manager.CombinedBid <= 9)
-            {
-                bidButtons[0].SetActive(false);
-            }
-            if (manager.CombinedBid <= 8)
-            {
-                bidButtons[1].SetActive(false);
-            }
-            if (manager.CombinedBid <= 7)
-            {
-                bidButtons[2].SetActive(false);
-            }
-            if (manager.CombinedBid <= 5)
-            {
-                bidButtons[3].SetActive(false);
-            }
-            if (manager.CombinedBid <= 4)
-            {
-                bidButtons[4].SetActive(false);
-            }
-            if (manager.CombinedBid <= 3)
-            {
-                bidButtons[5].SetActive(false);
-            }
-        }
-
-        if (player.Blind)
-        {
-            bidButtons[0].SetActive(false);
-            bidButtons[1].SetActive(false);
-            bidButtons[2].SetActive(false);
-            bidButtons[3].SetActive(false);
-            bidButtons[4].SetActive(false);
-        }
-
+        bidScreen.Show(player);
     }
 
     private void BidRoundStart(int position)
-    {        
-        bidScreen.SetActive(true);
-
-        BidSetOptions(position);
+    {
+        bidScreen.Show(player);
     }
 
     public void PlaceBid(int bid)
@@ -240,7 +177,6 @@ public class ActivePlayer : MonoBehaviour
                 return;
             }
         }
-        bidScreen.SetActive(false);
         player.SetBid(bid, false);
         player.FlipCards(CardFace.Front);
     }

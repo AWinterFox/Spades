@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun
 {
     private static System.Random rng = new System.Random();
 
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     private List<Card> activeCards;
     public List<Card> ActiveCards { get { return activeCards; } }
-    
 
     [SerializeField]
     private Transform cardPosition;
@@ -28,10 +28,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform cardStack;
 
-    [SerializeField]
-    private Player[] players;
-    public Player[] Players {  get { return players; } }
+    public Player[] Players { get; private set; }
 
+    [SerializeField]
+    private Transform[] playerSpawns;
+
+    [Header("Screens")]
     [SerializeField]
     private GameObject dealScreen;
 
@@ -69,7 +71,6 @@ public class GameManager : MonoBehaviour
     public static int TokenBet { get; set; } = 500;
     public static int WinScore { get; set; } = 500;
     public static int StartsOn { get; set; } = 0;
-    public static List<string> PlayerNames { get; set; } = new List<string>();
     public static Tournament Tournament { get; set; }
     public static Bracket CurrentBracket { get; set; }
 
@@ -82,8 +83,6 @@ public class GameManager : MonoBehaviour
 
     public Result Team1 { get; private set; } = new Result();
     public Result Team2 { get; private set; } = new Result();
-
-
 
     private List<AiPlayer> ais;
 
@@ -112,13 +111,21 @@ public class GameManager : MonoBehaviour
             return bid;
         } }
 
+    [HideInInspector]
     public UnityEvent OnCardPlayed = new UnityEvent();
+    [HideInInspector]
     public UnityEvent OnGameStart = new UnityEvent();
+    [HideInInspector]
     public UnityEvent OnGameLost = new UnityEvent();
+    [HideInInspector]
     public UnityEvent OnGameWon = new UnityEvent();
+    [HideInInspector]
     public UnityEvent OnSpadesBroken = new UnityEvent();
+    [HideInInspector]
     public UnityEvent OnFinished = new UnityEvent();
+    [HideInInspector]
     public UnityEvent<GameState> OnStateEnded = new UnityEventTyped<GameState>();
+    [HideInInspector]
     public UnityEvent<GameState> OnStateChanged = new UnityEventTyped<GameState>();
 
     private ScoringScreen scoring;
@@ -128,31 +135,44 @@ public class GameManager : MonoBehaviour
 
     private SoundManager soundManager;
 
-        
-    // Start is called before the first frame update
-    void Start()
+    //Prefabs
+    public ActivePlayer activePlayerPrefab;
+    public AiPlayer aiPlayerPrefab;
+    public Player simulatedPlayerPrefab;
+    public Player onlinePlayerPrefab;
+
+    public void StartGame(PlayerInfo[] players)
     {
-        //viewportHeight = camera.orthographicSize;
-        //viewportWidth = (float)camera.orthographicSize / ((float)Screen.height / (float)Screen.width);
-        //centerPosition = new Vector3(0, camera.transform.position.y, 0);
 
-        //startGame.Play();
+        startGame.Play();
         scoring = FindObjectOfType<ScoringScreen>();
-
-        //players[0].transform.position = centerPosition + new Vector3(0, -viewportHeight * 0.95f, 0); // Main player
-        //players[1].transform.position = centerPosition + new Vector3(-viewportWidth * 0.95f, 0, 0);
-        //players[2].transform.position = centerPosition + new Vector3(0, viewportHeight * 0.95f, 0);
-        //players[3].transform.position = centerPosition + new Vector3(viewportWidth * 0.95f, 0, 0);
         StartsOn = Random.Range(0, 4);
-        
-        if(Tournament != null)
+
+        if (Tournament != null)
         {
             tournamentScreen.SetActive(true);
         }
 
-        for (int i = 0; i < PlayerNames.Count; i++)
+        Players = new Player[4];
+        for (int i = 0; i < players.Length; i++)
         {
-            players[i].SetName(PlayerNames[i]);
+            switch (players[i].Type)
+            {
+                case PlayerType.ActivePlayer:
+                    Players[i] = PhotonNetwork.Instantiate(activePlayerPrefab.name, playerSpawns[i].position, Quaternion.identity).GetComponent<Player>();
+                    Players[i].GetComponent<PhotonView>().TransferOwnership(players[i].NetworkPlayer);
+                    break;
+                case PlayerType.OnlinePlayer:
+                    Players[i] = Instantiate(onlinePlayerPrefab, playerSpawns[i].position, Quaternion.identity).GetComponent<Player>();
+                    break;
+                case PlayerType.Simulated:
+                    Players[i] = Instantiate(simulatedPlayerPrefab, playerSpawns[i].position, Quaternion.identity).GetComponent<Player>();
+                    break;
+                case PlayerType.Ai:
+                    Players[i] = PhotonNetwork.Instantiate(aiPlayerPrefab.name, playerSpawns[i].position, Quaternion.identity).GetComponent<Player>();
+                    break;
+            }
+            Players[i].Setup(playerSpawns[i].GetComponent<PlayerSpawn>(), players[i].Name);
         }
 
         centerPosition = new Vector3(0, 0, 0);
@@ -258,19 +278,19 @@ public class GameManager : MonoBehaviour
                 dealScreen.SetActive(false);
                 break;
             case GameState.Sorting:
-                foreach (var player in players)
+                foreach (var player in Players)
                 {
                     player.SortCards();
                 }
                 sortingTime = 0;
                 break;
             case GameState.Bid:
-                players[TrickPlayer].CanBid(1);
+                Players[TrickPlayer].CanBid(1);
                 break;
             case GameState.Trick:
                 finishedHand = false;
                 Pile = new Dictionary<Player, Card>();
-                players[TrickPlayer].CanPlayCard(1);
+                Players[TrickPlayer].CanPlayCard(1);
                 Books += 1;
                 break;
             case GameState.Calculating:
@@ -280,7 +300,7 @@ public class GameManager : MonoBehaviour
                 foreach (var item in Pile)
                 {
                     item.Value.Flip(CardFace.Front);
-                    item.Value.MoveTo(winner.transform.position);
+                    item.Value.MoveTo(winner.transform.position, item.Value.transform.rotation);
                 }
                 break;
             case GameState.Finished:
@@ -290,8 +310,8 @@ public class GameManager : MonoBehaviour
                 rounds++;
 
                 //Calculate team scores
-                CalculateTeam(Team1, players[0], players[2]);
-                CalculateTeam(Team2, players[1], players[3]);
+                CalculateTeam(Team1, Players[0], Players[2]);
+                CalculateTeam(Team2, Players[1], Players[3]);
 
                 // Optional win on 13.
                 if (gameOptions.TeamWinsOn13)
@@ -347,10 +367,10 @@ public class GameManager : MonoBehaviour
                     WinGame();
                 }*/
 
-                players[0].Score = Team1.ScoreTotal;
-                players[1].Score = Team2.ScoreTotal;
-                players[2].Score = Team1.ScoreTotal;
-                players[3].Score = Team2.ScoreTotal;
+                Players[0].Score = Team1.ScoreTotal;
+                Players[1].Score = Team2.ScoreTotal;
+                Players[2].Score = Team1.ScoreTotal;
+                Players[3].Score = Team2.ScoreTotal;
 
                 OnFinished.Invoke();
 
@@ -382,23 +402,24 @@ public class GameManager : MonoBehaviour
     {
         //Setup AI
         ais = new List<AiPlayer>();
-        foreach (var player in players)
+        foreach (var player in Players)
         {
             player.Reset();
             var ai = player.GetComponent<AiPlayer>();
             if (ai) ais.Add(ai);
         }
 
-        players[0].Partner = players[2];
-        players[2].Partner = players[0];
-        players[1].Partner = players[3];
-        players[3].Partner = players[1];
+        Players[0].Partner = Players[2];
+        Players[2].Partner = Players[0];
+        Players[1].Partner = Players[3];
+        Players[3].Partner = Players[1];
 
         PlayerBids = new Dictionary<Player, int>();
         activeCards = new List<Card>();
         foreach (var card in cards)
         {
-            var newCard = Instantiate(card, cardStack);
+            
+            var newCard = PhotonNetwork.Instantiate(card.name, cardStack.position, Quaternion.identity).GetComponent<Card>();
 
             newCard.Flip(CardFace.Back);
 
@@ -474,16 +495,16 @@ public class GameManager : MonoBehaviour
             switch (player)
             {
                 case 0:
-                    players[0].AddCard(card);
+                    Players[0].AddCard(card);
                     break;
                 case 1:
-                    players[1].AddCard(card);
+                    Players[1].AddCard(card);
                     break;
                 case 2:
-                    players[2].AddCard(card);
+                    Players[2].AddCard(card);
                     break;
                 case 3:
-                    players[3].AddCard(card);
+                    Players[3].AddCard(card);
                     break;
                 default:
                     break;
@@ -520,7 +541,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayCard(Card card, Player player)
     {
-        if(player == players[TrickPlayer])
+        if(player == Players[TrickPlayer])
         {
             TrickCard = card;
         }
@@ -535,7 +556,7 @@ public class GameManager : MonoBehaviour
         {
             yield return 0;
         }
-        foreach (var otherPlayer in players.Where(p => p != player))
+        foreach (var otherPlayer in Players.Where(p => p != player))
         {
             otherPlayer.OnCardPlayed.Invoke(card);
         }
@@ -548,7 +569,7 @@ public class GameManager : MonoBehaviour
         }
         if (Pile.Count != 4)
         {
-            players[(TrickPlayer + Pile.Count) % 4].CanPlayCard(Pile.Count + 1);
+            Players[(TrickPlayer + Pile.Count) % 4].CanPlayCard(Pile.Count + 1);
         }
     }
 
@@ -557,7 +578,7 @@ public class GameManager : MonoBehaviour
         PlayerBids.Add(player, bid);
         if(PlayerBids.Count != 4)
         {
-            players[(TrickPlayer + PlayerBids.Count) % 4].CanBid(PlayerBids.Count + 1);
+            Players[(TrickPlayer + PlayerBids.Count) % 4].CanBid(PlayerBids.Count + 1);
         }
         
     }
@@ -698,6 +719,22 @@ public enum GameState
     Finished
 }
 
+public enum PlayerType
+{
+    ActivePlayer,
+    OnlinePlayer,
+    Simulated,
+    Ai,
+}
+
+[System.Serializable]
+public class PlayerInfo
+{
+    public string Name;
+    public PlayerType Type;
+    public Photon.Realtime.Player NetworkPlayer;
+}
+
 public class Result
 {
     public int Bid;
@@ -744,4 +781,5 @@ public class GameOptions
     public bool DoublePointsOn10Books = false;
     [Range(0,13)]
     public int MininmumBid = 0;
+
 }

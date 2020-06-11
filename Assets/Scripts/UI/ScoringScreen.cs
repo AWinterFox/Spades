@@ -218,7 +218,8 @@ public class ScoringScreen : MonoBehaviour
                     }
                     else
                     {
-                        
+                        SetEndButton(true);
+                        Debug.Log("Bam");
                         var newRound = new List<Bracket>();
                         for (int i = 0; i < currentRound.Count / 2; i++)
                         {
@@ -256,13 +257,13 @@ public class ScoringScreen : MonoBehaviour
                         var bracket = tournament.Rounds.First().First(b => b.Team1 == tournament.PlayerTeam || b.Team2 == tournament.PlayerTeam);
                         var otherTeam = bracket.Team1 == tournament.PlayerTeam ? bracket.Team2 : bracket.Team1;
 
-                        GameManager.PlayerNames = new List<string>
-                        {
-                            tournament.PlayerTeam.Player1,
-                            otherTeam.Player1,
-                            tournament.PlayerTeam.Player2,
-                            otherTeam.Player2
-                        };
+                        //GameManager.PlayerNames = new List<string>
+                        //{
+                        //    tournament.PlayerTeam.Player1,
+                        //    otherTeam.Player1,
+                        //    tournament.PlayerTeam.Player2,
+                        //    otherTeam.Player2
+                        //};
                         
                         
                     }

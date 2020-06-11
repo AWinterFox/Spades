@@ -47,6 +47,7 @@ MonoBehaviour:
     MinimumOneSpade: 1
     TeamWinsOn13: 1
     DoublePointsOn10Books: 1
+    MininmumBid: 0
   camera: {fileID: 0}
   cards:
   - {fileID: 819889348361576769, guid: b519e80e29bb7074bbc1d3e867eb9de7, type: 3}
@@ -103,18 +104,38 @@ MonoBehaviour:
   - {fileID: 461944101627733915, guid: 1930f1be8473014488f9aafaf794d6a6, type: 3}
   cardPosition: {fileID: 0}
   cardStack: {fileID: 0}
-  players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  playerSpawns: []
   dealScreen: {fileID: 0}
   endScreen: {fileID: 0}
+  tournamentScreen: {fileID: 0}
   nilBidBonus: 100
   pointsPerBidTrick: 10
   pointPerBag: 1
   tenBagPenalty: 100
   afterTrickDelay: 1.2
+  startGame: {fileID: 0}
+  gameWon: {fileID: 0}
+  OnCardPlayed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGameStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGameLost:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGameWon:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpadesBroken:
+    m_PersistentCalls:
+      m_Calls: []
   OnFinished:
     m_PersistentCalls:
       m_Calls: []
+  activePlayerPrefab: {fileID: 7827475420158423096, guid: bf86059958cfcbd47bf6b61d3fe479c2,
+    type: 3}
+  aiPlayerPrefab: {fileID: 4990833715524901119, guid: 44a60064c50a80f4c8b6363e4b9afe06,
+    type: 3}
+  simulatedPlayerPrefab: {fileID: 0}
+  onlinePlayerPrefab: {fileID: 0}

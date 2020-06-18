@@ -4,14 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class Lobby : MonoBehaviourPunCallbacks
 {
     const string GAME_VERSION = "1";
-    const float HOST_TIME = 10;
+    const float HOST_TIME = 5;
 
     [SerializeField]
     private GameObject panel;
+
+    private TMP_Text panelText;
 
     private bool hosting = false;
     private float hostingElapsed = 0;
@@ -20,8 +23,9 @@ public class Lobby : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        PhotonNetwork.OfflineMode = true;
 #if UNITY_EDITOR
-            //PhotonNetwork.OfflineMode = true;
+        //PhotonNetwork.OfflineMode = true;
 #endif
         if (!PhotonNetwork.IsConnectedAndReady)
         {
@@ -39,14 +43,23 @@ public class Lobby : MonoBehaviourPunCallbacks
             if(hostingElapsed > HOST_TIME)
             {
 
-                while(players.Count < 4)
+                players.Add(new PlayerInfo
                 {
-                    players.Add(new PlayerInfo
-                    {
-                        Name = "AI",
-                        Type = PlayerType.Ai
-                    });
-                }
+                    Name = NameGen.GetAiName(),
+                    Type = PlayerType.Ai
+                });
+
+                players.Add(new PlayerInfo
+                {
+                    Name = NameGen.GetSimulatedName(),
+                    Type = PlayerType.Simulated
+                });
+
+                players.Add(new PlayerInfo
+                {
+                    Name = NameGen.GetAiName(),
+                    Type = PlayerType.Ai
+                });
 
                 Master.LoadGame(players.ToArray());
                 hosting = false;
@@ -57,6 +70,7 @@ public class Lobby : MonoBehaviourPunCallbacks
     public void StartLobby()
     {
         hosting = false;
+        
         StartCoroutine(StartLobbyI());
     }
 

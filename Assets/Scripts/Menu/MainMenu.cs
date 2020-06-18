@@ -40,20 +40,7 @@ public class MainMenu : MonoBehaviour
     private Lobby lobby;
 
     string gameId = "3594942";
-    bool testMode = true;
-
-    #region Names
-    public static List<string> Names { get; private set; }
-
-    public static string GetName()
-    {
-        string[] Names2 = new string[] { "Aaren", "Aarika", "Abagael", "Abagail", "Abbe", "Abbey", "Abbi", "Abbie", "Abby", "Abbye", "Abigael", "Abigail", "Abigale", "Abra", "Ada", "Adah", "Adaline", "Adan", "Adara", "Adda", "Addi", "Addia", "Addie", "Addy", "Adel", "Adela", "Adelaida" };
-        var namei = Names2[UnityEngine.Random.Range(0, 10)];
-	    return namei;
-    }
-
-    #endregion
-    
+    bool testMode = true;    
 
     void Start()
     {
@@ -87,23 +74,23 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetString("daily", System.DateTime.Now.ToString());
         }
 
-        if (Names == null)
-        {
-            var filePath = Path.Combine(Application.streamingAssetsPath, "names.json");
+        //if (Names == null)
+        //{
+        //    var filePath = Path.Combine(Application.streamingAssetsPath, "names.json");
 
-            if (File.Exists(filePath))
-            {
-                var fs = new FileStream(filePath, FileMode.Open);
-                var sr = new StreamReader(fs);
+        //    if (File.Exists(filePath))
+        //    {
+        //        var fs = new FileStream(filePath, FileMode.Open);
+        //        var sr = new StreamReader(fs);
 
-                Names = new List<string> { "Hello", "bye" };
-                var tempJson = JsonConvert.SerializeObject(Names);
+        //        Names = new List<string> { "Hello", "bye" };
+        //        var tempJson = JsonConvert.SerializeObject(Names);
 
-                var json = sr.ReadToEnd();
+        //        var json = sr.ReadToEnd();
 
-                Names = JsonConvert.DeserializeObject<List<string>>(json);
-            }
-        }
+        //        Names = JsonConvert.DeserializeObject<List<string>>(json);
+        //    }
+        //}
     }
 
     private void onTokenChange(float value)
@@ -138,7 +125,7 @@ public class MainMenu : MonoBehaviour
         var playerTeam = new Team
         {
             Player1 = "You",
-            Player2 = GetName()
+            Player2 = NameGen.GetAiName()
         };
 
         
@@ -150,31 +137,31 @@ public class MainMenu : MonoBehaviour
                 playerTeam,
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 }
             }
         };

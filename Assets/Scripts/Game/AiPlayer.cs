@@ -10,7 +10,12 @@ public class AiPlayer : MonoBehaviour
 
     private List<Card> remainingCards = new List<Card>();
 
-    private List<Player> opponents; 
+    private List<Player> opponents;
+
+    [SerializeField]
+    private float delayMin = 0.5f;
+    [SerializeField]
+    private float delayMax = 1;
 
     private void Awake()
     {
@@ -51,7 +56,7 @@ public class AiPlayer : MonoBehaviour
 
     private IEnumerator IPlayHand(int position)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Random.Range(delayMin, delayMax));
 
         var cards = player.GetPlayable(position).OrderByDescending(c => (int)c.Suit).ThenByDescending(c => (int)c.Value).ToList();
         var playable = new List<Card>();
@@ -393,6 +398,13 @@ public class AiPlayer : MonoBehaviour
 
     private void BidRoundStart(int position)
     {
+        StartCoroutine(BidRoundStartI(position));
+    }
+
+    private IEnumerator BidRoundStartI(int position)
+    {
+        yield return new WaitForSeconds(Random.Range(delayMin, delayMax));
+
         //Make remainnig cards list. adding each card not already in players hand.
         remainingCards = new List<Card>();
         foreach (var card in manager.ActiveCards)
@@ -404,13 +416,13 @@ public class AiPlayer : MonoBehaviour
         if (player.Partner.Blind)
         {
             player.SetBid(0, true);
-            return;
+            yield break;
         }
 
         if (player.Partner.Bid == 13)
         {
             player.SetBid(0, true);
-            return;
+            yield break;
         }
 
         var info = new Info();
@@ -511,7 +523,7 @@ public class AiPlayer : MonoBehaviour
             if (canBidNil)
             {
                 player.SetBid(0, false);
-                return;
+                yield break;
             }
         }
 

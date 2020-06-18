@@ -31,6 +31,10 @@ public class ActivePlayer : MonoBehaviour
         controls = new Controls();   
         controls.Game.Select.performed += OnSelect;
         bidScreen.OnBid.AddListener(PlaceBid);
+
+        if (!player.photonView.IsMine) {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable()

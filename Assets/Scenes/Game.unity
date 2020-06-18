@@ -13600,25 +13600,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 387215667, guid: a2e34de04a3bf87419539134850ed65f, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 39494c3a86681ec4189ac66de68e067b, type: 3}
-    - target: {fileID: 700272152150678097, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1cbec97b7c1946b4c990cb1e483ca27f, type: 3}
-    - target: {fileID: 700272152150678097, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.258
-      objectReference: {fileID: 0}
-    - target: {fileID: 702410694254338163, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 702410694900065806, guid: a2e34de04a3bf87419539134850ed65f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13678,37 +13659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 702410694900065841, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: winSound
-      value: 
-      objectReference: {fileID: 702410695361317680}
-    - target: {fileID: 702410694900065841, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: startGame
-      value: 
-      objectReference: {fileID: 702410695361317679}
-    - target: {fileID: 702410695255573078, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ac09577274a16ad4ebcc80c88a6caf40, type: 3}
-    - target: {fileID: 702410695255573078, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.651
-      objectReference: {fileID: 0}
-    - target: {fileID: 702410695255573078, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -2626812720725918743, guid: a33353d0343246d4eb1fed72d00daa8e,
-        type: 2}
-    - target: {fileID: 8497274137619604964, guid: a2e34de04a3bf87419539134850ed65f,
-        type: 3}
-      propertyPath: m_Name
-      value: GameStart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e34de04a3bf87419539134850ed65f, type: 3}
@@ -13827,6 +13777,12 @@ PrefabInstance:
       propertyPath: aiPlayerPrefab
       value: 
       objectReference: {fileID: 4990833715524901119, guid: 44a60064c50a80f4c8b6363e4b9afe06,
+        type: 3}
+    - target: {fileID: 5386993879724730469, guid: 0f39a00775c1c30439b450f7e4db5ca7,
+        type: 3}
+      propertyPath: simulatedPlayerPrefab
+      value: 
+      objectReference: {fileID: 7337623218922338700, guid: 3e320afb9930a674e9e22b040929bc8a,
         type: 3}
     - target: {fileID: 5386993879724730470, guid: 0f39a00775c1c30439b450f7e4db5ca7,
         type: 3}

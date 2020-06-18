@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviourPun
+public class Card : MonoBehaviourPun, IPunObservable
 {
     [SerializeField]
     private Sprite backFace;
@@ -136,6 +136,10 @@ public class Card : MonoBehaviourPun
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
                 break;
         }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }
 

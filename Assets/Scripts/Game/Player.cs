@@ -7,7 +7,7 @@ using TMPro;
 using Photon.Pun;
 using System.Linq;
 
-public class Player : MonoBehaviourPun
+public class Player : MonoBehaviourPun, IPunObservable
 {
     private Transform cardPosition;
     private Transform playPosition;
@@ -126,7 +126,7 @@ public class Player : MonoBehaviourPun
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            photonView.RPC("AddCardById", RpcTarget.Others, card.photonView.ViewID);
+            //photonView.RPC("AddCardById", RpcTarget.Others, card.photonView.ViewID);
             card.MoveToTransform(cardPosition);
         }
         cards.Add(card);
@@ -313,6 +313,10 @@ public class Player : MonoBehaviourPun
         {
             //Game win screen.
         }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }
 

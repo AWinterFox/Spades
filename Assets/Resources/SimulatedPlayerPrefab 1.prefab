@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4990833715524901119}
   - component: {fileID: 7635362752211684071}
   m_Layer: 0
-  m_Name: AiPlayerPrefab
+  m_Name: SimulatedPlayerPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4da41d3f902b945a81aaa48df0d981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayMin: 0.5
-  delayMax: 1
+  delayMin: 1.5
+  delayMax: 3
 --- !u!114 &7635362752211684071
 MonoBehaviour:
   m_ObjectHideFlags: 0

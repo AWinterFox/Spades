@@ -39,21 +39,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private AudioSource music;
 
+    [SerializeField]
+    private Lobby lobby;
+
     string gameId = "3594942";
-    bool testMode = true;
-
-    #region Names
-    public static List<string> Names { get; private set; }
-
-    public static string GetName()
-    {
-        string[] Names2 = new string[] { "Aaren", "Aarika", "Abagael", "Abagail", "Abbe", "Abbey", "Abbi", "Abbie", "Abby", "Abbye", "Abigael", "Abigail", "Abigale", "Abra", "Ada", "Adah", "Adaline", "Adan", "Adara", "Adda", "Addi", "Addia", "Addie", "Addy", "Adel", "Adela", "Adelaida" };
-        var namei = Names2[UnityEngine.Random.Range(0, 10)];
-	    return namei;
-    }
-
-    #endregion
-    
+    bool testMode = true;    
 
     void Start()
     {
@@ -87,23 +77,23 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetString("daily", System.DateTime.Now.ToString());
         }
 
-        if (Names == null)
-        {
-            var filePath = Path.Combine(Application.streamingAssetsPath, "names.json");
+        //if (Names == null)
+        //{
+        //    var filePath = Path.Combine(Application.streamingAssetsPath, "names.json");
 
-            if (File.Exists(filePath))
-            {
-                var fs = new FileStream(filePath, FileMode.Open);
-                var sr = new StreamReader(fs);
+        //    if (File.Exists(filePath))
+        //    {
+        //        var fs = new FileStream(filePath, FileMode.Open);
+        //        var sr = new StreamReader(fs);
 
-                Names = new List<string> { "Hello", "bye" };
-                var tempJson = JsonConvert.SerializeObject(Names);
+        //        Names = new List<string> { "Hello", "bye" };
+        //        var tempJson = JsonConvert.SerializeObject(Names);
 
-                var json = sr.ReadToEnd();
+        //        var json = sr.ReadToEnd();
 
-                Names = JsonConvert.DeserializeObject<List<string>>(json);
-            }
-        }
+        //        Names = JsonConvert.DeserializeObject<List<string>>(json);
+        //    }
+        //}
     }
 
     private void onTokenChange(float value)
@@ -124,22 +114,10 @@ public class MainMenu : MonoBehaviour
         if(GameManager.TokenBet < TokenManager.Tokens){
             GameManager.WinScore = score;
             GameManager.Tournament = null;
-            GameManager.PlayerNames = new List<string>
-            {
-                "You", GetName(),GetName(),GetName()
-            };
-            SceneManager.LoadScene("Game");
+            lobby.StartLobby();
         }else{
             panel.SetActive(true);
         }
-        
-        
-    }
-
-    private void Update()
-    {
-        header.text = "Welcome back, " + authy.username;
-        tokenTotal2.text = (TokenManager.Tokens).ToString();
     }
 
     public void OnTournament()
@@ -150,7 +128,7 @@ public class MainMenu : MonoBehaviour
         var playerTeam = new Team
         {
             Player1 = "You",
-            Player2 = GetName()
+            Player2 = NameGen.GetAiName()
         };
 
         
@@ -162,31 +140,31 @@ public class MainMenu : MonoBehaviour
                 playerTeam,
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 },
                 new Team
                 {
-                    Player1 = GetName(), Player2 = GetName()
+                    Player1 = NameGen.GetAiName(), Player2 = NameGen.GetAiName()
                 }
             }
         };
@@ -195,19 +173,25 @@ public class MainMenu : MonoBehaviour
 
         var otherTeam = bracket.Team1 == tournament.PlayerTeam ? bracket.Team2 : bracket.Team1;
 
-        GameManager.PlayerNames = new List<string>
-        {
-            tournament.PlayerTeam.Player1,
-            otherTeam.Player1,
-            tournament.PlayerTeam.Player2,
-            otherTeam.Player2
-        };
+        //TODO: Fix tournament to new moddle.
 
-        GameManager.Tournament = tournament;
+        //GameManager.PlayerNames = new List<string>
+        //{
+        //    tournament.PlayerTeam.Player1,
+        //    otherTeam.Player1,
+        //    tournament.PlayerTeam.Player2,
+        //    otherTeam.Player2
+        //};
 
-        SceneManager.LoadScene("Game");
+        //GameManager.Tournament = tournament;
+
+        //SceneManager.LoadScene("Game");
     }
 
+    private void Update()
+    {
+        tokenTotal2.text = TokenManager.Tokens.ToString();
+    }
 }
 
 public class Tournament

@@ -4,26 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using Photon.Pun;
+using System.Linq;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPun, IPunObservable
 {
-    [SerializeField]
     private Transform cardPosition;
-
-    [SerializeField]
     private Transform playPosition;
-
-    [SerializeField]
     private TMP_Text nameText;
+    private string playerName;
 
     [SerializeField]
     private TMP_Text bidText;
 
     [SerializeField]
     private GameObject bidObject;
-
-    [SerializeField]
-    private string playerName;
 
     private bool canPlayCard = false;
 
@@ -70,6 +65,22 @@ public class Player : MonoBehaviour
         return new Vector3(1, 0, 0);
     } }
 
+    private float cardAngle {  get
+        {
+            switch (directionOfCards)
+            {
+                case CardDirection.North:
+                    return 0;
+                case CardDirection.West:
+                    return 90;
+                case CardDirection.East:
+                    return 270;
+                case CardDirection.South:
+                    return 180;
+            }
+            return 0;
+        } }
+
     [SerializeField]
     private float cardSpacing = 0.3f;
 
@@ -90,7 +101,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         manager = FindObjectOfType<GameManager>();
-        nameText.text = playerName;
     }
 
     public void Reset()
@@ -101,19 +111,39 @@ public class Player : MonoBehaviour
         OnNewGame.Invoke();
     }
 
-    public void SetName(string name)
+    public void Setup(PlayerSpawn spawn, string name)
     {
         playerName = name;
-        nameText.text = playerName;
+        nameText = spawn.NamePlate;
+        playPosition = spawn.PlayPosition;
+        cardPosition = spawn.CardPosition;
+        directionOfCards = spawn.CardDirection;
     }
 
     #endregion
 
     public void AddCard(Card card)
     {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            //photonView.RPC("AddCardById", RpcTarget.Others, card.photonView.ViewID);
+            card.MoveToTransform(cardPosition);
+        }
         cards.Add(card);
-        card.MoveTo(cardPosition);
         card.transform.parent = cardPosition;
+    }
+
+    [PunRPC]
+    public void AddCardById(int id)
+    {
+        var card = FindObjectsOfType<Card>().FirstOrDefault(c => c.photonView.ViewID == id);
+        cards.Add(card);
+        card.transform.parent = cardPosition;
+    }
+
+    public void RemoveCard(Card card)
+    {
+        cards.Remove(card);
     }
 
     public void SortCards()
@@ -152,7 +182,7 @@ public class Player : MonoBehaviour
         {
             angle += 360;
         }
-        var finishAngle = cardPosition.localEulerAngles.z + angle;
+        var finishAngle = angle;
 
         var timer = 0f;
         while (timer < time)
@@ -186,7 +216,7 @@ public class Player : MonoBehaviour
             else
             {
                 canPlayCard = false;
-                card.MoveTo(playPosition);
+                card.MoveToTransform(playPosition);
                 card.SetPosition(60 + Position);
                 card.Flip(CardFace.Front);
                 card.PlayedBy = this;
@@ -197,7 +227,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    
     public void SetBid(int bid, bool partnerBlind)
     {
         if(partnerBlind){
@@ -211,7 +241,7 @@ public class Player : MonoBehaviour
 
         foreach (var card in cards)
         {
-            card.Flip(CardFace.Front);
+            //card.Flip(CardFace.Front);
         }
     }
 
@@ -260,10 +290,33 @@ public class Player : MonoBehaviour
         }
     }
 
+    [PunRPC]
     public void WinRound()
     {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("GameWon", RpcTarget.Others);
+        }
         Tricks++;
         nameText.text = $"{playerName} ({Bid}) {Tricks}";
+    }
+
+    [PunRPC]
+    public void GameWon()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("GameWon", RpcTarget.Others);
+        }
+
+        if(photonView.IsMine)
+        {
+            //Game win screen.
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }
 

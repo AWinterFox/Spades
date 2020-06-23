@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "99206868809",
+    "firebase_url": "https://jokers-wild-spades.firebaseio.com",
+    "project_id": "jokers-wild-spades",
+    "storage_bucket": "jokers-wild-spades.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99206868809:android:7d423028c2090fc35a7498",
+        "android_client_info": {
+          "package_name": "com.epkhub.JokersWildSpades"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99206868809-06sie5ulok17j390omqnfflsihbu7bfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLzsLUG8IvbT0sdoU9WrN1_d4YOA-CPr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99206868809-06sie5ulok17j390omqnfflsihbu7bfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -25,6 +25,9 @@ public class MainMenu : MonoBehaviour
     private TMP_Text tokenTotal2;
 
     [SerializeField]
+    private TMP_Text header;
+
+    [SerializeField]
     private GameObject panel;
 
     [SerializeField]
@@ -66,7 +69,7 @@ public class MainMenu : MonoBehaviour
         tokenBet.text = (TokenManager.Tokens / 4).ToString();
         tokenTotal.text = (TokenManager.Tokens).ToString();
         tokenTotal2.text = (TokenManager.Tokens).ToString();
-
+        
 
         tokenSlider.onValueChanged.AddListener(onTokenChange);
 
@@ -135,6 +138,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
+        header.text = "Welcome back, " + authy.username;
         tokenTotal2.text = (TokenManager.Tokens).ToString();
     }
 

@@ -6957,7 +6957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.87959653, y: 0.030589338}
   m_AnchorMax: {x: 0.96489483, y: 0.17032854}
-  m_AnchoredPosition: {x: 0.13000488, y: -6.5}
+  m_AnchoredPosition: {x: 0.12988281, y: -6.5}
   m_SizeDelta: {x: 8.400024, y: -1.3838806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878231746
@@ -15888,7 +15888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.02842758, y: 0.91400003}
   m_AnchorMax: {x: 0.42844018, y: 1}
-  m_AnchoredPosition: {x: -4, y: 0.7947235}
+  m_AnchoredPosition: {x: -4, y: 0.79473877}
   m_SizeDelta: {x: 0, y: -1.5895691}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1844644305
@@ -18677,6 +18677,7 @@ MonoBehaviour:
   lastLoginn: {fileID: 288273851}
   tokenTotal: {fileID: 1709159346}
   tokenTotal2: {fileID: 2058485254}
+  header: {fileID: 1844644305}
   panel: {fileID: 1830655357}
   bonus: {fileID: 1750781363}
   tokenSlider: {fileID: 1793858951}

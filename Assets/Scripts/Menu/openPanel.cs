@@ -15,7 +15,7 @@ public class openPanel : MonoBehaviour
 
     public void oClick()
     {
-        panel.SetActive(!panel.active);
+        panel.SetActive(true);
     }
 
     // Update is called once per frame

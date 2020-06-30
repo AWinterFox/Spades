@@ -21,8 +21,8 @@ public class BidScreen : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             var button = buttons[i];
-
-            button.onClick.AddListener(() => Bid(i));
+            var x = i;
+            button.onClick.AddListener(() => Bid(x));
         }
     }
 

@@ -85,7 +85,7 @@ public class BidScreen : MonoBehaviour
 
     private void Bid(int i)
     {
-        OnBid.Invoke(i+1);
+        OnBid.Invoke(i);
         bidScreen.SetActive(false);
     }
 

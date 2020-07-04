@@ -12,11 +12,9 @@ public class openChamp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(onClick);
     }
 
-    private void onClick()
+    public void onClic()
     {
         panel.SetActive(true);
     }

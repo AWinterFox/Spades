@@ -13,7 +13,7 @@ public class openPanel : MonoBehaviour
     {
     }
 
-    public void oClick()
+    public void onClic()
     {
         panel.SetActive(true);
     }

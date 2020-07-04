@@ -34,18 +34,6 @@ public class ScoringScreen : MonoBehaviourPun
     private TMP_Text team2Stucks;
 
     [SerializeField]
-    private TMP_Text team1BagsPrevious;
-
-    [SerializeField]
-    private TMP_Text team2BagsPrevious;
-
-    [SerializeField]
-    private TMP_Text team1TotalBags;
-
-    [SerializeField]
-    private TMP_Text team2TotalBags;
-
-    [SerializeField]
     private TMP_Text team1SuccessfulBid;
 
     [SerializeField]
@@ -58,40 +46,10 @@ public class ScoringScreen : MonoBehaviourPun
     private TMP_Text team2BagScore;
 
     [SerializeField]
-    private TMP_Text team1Score;
-
-    [SerializeField]
-    private TMP_Text team2Score;
-
-    [SerializeField]
-    private TMP_Text team1ScorePrevious;
-
-    [SerializeField]
-    private TMP_Text team2ScorePrevious;
-
-    [SerializeField]
     private TMP_Text team1Total;
 
     [SerializeField]
     private TMP_Text team2Total;
-
-    [SerializeField]
-    private GameObject nilScore;
-
-    [SerializeField]
-    private TMP_Text team1NilScore;
-
-    [SerializeField]
-    private TMP_Text team2NilScore;
-
-    [SerializeField]
-    private GameObject nilPenalty;
-
-    [SerializeField]
-    private TMP_Text team1NilPenalty;
-
-    [SerializeField]
-    private TMP_Text team2NilPenalty;
 
     [Header("Buttons")]
     [SerializeField]
@@ -275,7 +233,7 @@ public class ScoringScreen : MonoBehaviourPun
         else if (r2.ScoreTotal >= GameManager.WinScore || r1.Lost)
         {
             winnerLabel.SetActive(true);
-            winnerText.text = "Team 2 Wins";
+            winnerText.text = "Team 1 Wins";
             //if (GameManager.CurrentBracket != null)
             //{
             //    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team2;

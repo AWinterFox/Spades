@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviourPun
     public void StartGame(PlayerInfo[] players)
     {
 
-        startGame.Play();
+        //startGame.Play();
         scoring = FindObjectOfType<ScoringScreen>();
         StartsOn = Random.Range(0, 4);
 
@@ -402,10 +402,12 @@ public class GameManager : MonoBehaviourPun
 
     public void NewGame()
     {
+        Debug.Log(Players);
         //Setup AI
         ais = new List<AiPlayer>();
         foreach (var player in Players)
         {
+            Debug.Log(player);
             player.Reset();
             var ai = player.GetComponent<AiPlayer>();
             if (ai) ais.Add(ai);
@@ -468,6 +470,7 @@ public class GameManager : MonoBehaviourPun
     {
         gameWon.Play();
         TokenManager.AddTokens(TokenBet);
+        SceneManager.LoadScene("Menu");
     }
 
     public void LoseGame(bool menu = false)
@@ -476,7 +479,7 @@ public class GameManager : MonoBehaviourPun
             OnGameLost.Invoke();
         }
         
-        TokenManager.TakeTokens(TokenBet);
+        SceneManager.LoadScene("Menu");
     }
 
     private IEnumerator dealCoroutine;

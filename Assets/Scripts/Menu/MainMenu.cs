@@ -12,29 +12,15 @@ using System;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text tokenBet;
-
-    [SerializeField]
-    private TMP_Text lastLoginn;
 
     [SerializeField]
     private TMP_Text tokenTotal;
-
-    [SerializeField]
-    private TMP_Text tokenTotal2;
-
-    [SerializeField]
-    private TMP_Text header;
 
     [SerializeField]
     private GameObject panel;
 
     [SerializeField]
     private GameObject bonus;
-
-    [SerializeField]
-    private Slider tokenSlider;
 
     [SerializeField]
     private AudioSource music;
@@ -53,18 +39,11 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         music.Play();
-        tokenSlider.maxValue = TokenManager.Tokens;
-        tokenSlider.value = TokenManager.Tokens / 4;
-        tokenSlider.wholeNumbers = true;
-        tokenBet.text = (TokenManager.Tokens / 4).ToString();
         tokenTotal.text = (TokenManager.Tokens).ToString();
-        tokenTotal2.text = (TokenManager.Tokens).ToString();
-        
 
-        tokenSlider.onValueChanged.AddListener(onTokenChange);
+      
 
         var lastLogin = PlayerPrefs.GetString("daily", System.DateTime.Now.ToString());
-        lastLoginn.text = "Last Login: " + lastLogin.ToString();
 
         var last = System.DateTime.Parse(lastLogin);
         var current = System.DateTime.Now;
@@ -95,11 +74,7 @@ public class MainMenu : MonoBehaviour
         //    }
         //}
     }
-
-    private void onTokenChange(float value)
-    {
-        tokenBet.text = (value).ToString();
-    }
+   
 
     public void OnPlay(int score)
     {
@@ -190,7 +165,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        tokenTotal2.text = TokenManager.Tokens.ToString();
+        tokenTotal.text = TokenManager.Tokens.ToString();
     }
 }
 

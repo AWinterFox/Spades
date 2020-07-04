@@ -249,6 +249,7 @@ public class Player : MonoBehaviourPun, IPunObservable
     {
         bidText.text = $"I bid {bid}";
         bidObject.SetActive(true);
+        bidObject.transform.position = Vector3.Lerp(transform.position, playPosition.position, 0.65f);
         yield return new WaitForSeconds(1.5f);
         manager.PlaceBid(this, bid);
         bidObject.SetActive(false);

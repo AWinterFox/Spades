@@ -469,7 +469,6 @@ public class GameManager : MonoBehaviourPun
     {
         gameWon.Play();
         TokenManager.AddTokens(TokenBet);
-        SceneManager.LoadScene("Menu");
     }
 
     public void LoseGame(bool menu = false)
@@ -477,8 +476,6 @@ public class GameManager : MonoBehaviourPun
         if(!menu){
             OnGameLost.Invoke();
         }
-        
-        SceneManager.LoadScene("Menu");
     }
 
     private IEnumerator dealCoroutine;

@@ -111,6 +111,7 @@ public class ScoringScreen : MonoBehaviour
         mainMenuButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("Menu");
+            Photon.Pun.PhotonNetwork.LeaveRoom();
         });
         mainMenuButton.gameObject.SetActive(false);
 
@@ -225,7 +226,6 @@ public class ScoringScreen : MonoBehaviour
 
             }
             else if (r1.Lost){
-                Debug.Log("Trigger 1");
                 winnerLabel.SetActive(true);
                 winnerText.text = "Team 2 Wins";
                 if (GameManager.CurrentBracket != null)
@@ -247,6 +247,11 @@ public class ScoringScreen : MonoBehaviour
                 SetEndButton(false);
             }
         });
+    }
+
+    private void TurnOff()
+    {
+
     }
 
     private void SetEndButton(bool win)

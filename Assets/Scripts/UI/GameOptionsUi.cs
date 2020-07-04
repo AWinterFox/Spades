@@ -59,6 +59,8 @@ public class GameOptionsUi : MonoBehaviour
         var gameManager = FindObjectOfType<GameManager>();
 
         gameManager.LoseGame(true);
+
+        Photon.Pun.PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Menu");
     }
 

@@ -87,7 +87,7 @@ public class MainMenu : MonoBehaviour
         }
 
         if(GameManager.TokenBet < TokenManager.Tokens){
-            GameManager.WinScore = score;
+            GameManager.WinScore = 10;//score;
             GameManager.Tournament = null;
             lobby.StartLobby();
         }else{

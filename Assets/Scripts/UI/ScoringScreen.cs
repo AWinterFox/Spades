@@ -33,18 +33,6 @@ public class ScoringScreen : MonoBehaviour
     private TMP_Text team2Stucks;
 
     [SerializeField]
-    private TMP_Text team1BagsPrevious;
-
-    [SerializeField]
-    private TMP_Text team2BagsPrevious;
-
-    [SerializeField]
-    private TMP_Text team1TotalBags;
-
-    [SerializeField]
-    private TMP_Text team2TotalBags;
-
-    [SerializeField]
     private TMP_Text team1SuccessfulBid;
 
     [SerializeField]
@@ -57,40 +45,10 @@ public class ScoringScreen : MonoBehaviour
     private TMP_Text team2BagScore;
 
     [SerializeField]
-    private TMP_Text team1Score;
-
-    [SerializeField]
-    private TMP_Text team2Score;
-
-    [SerializeField]
-    private TMP_Text team1ScorePrevious;
-
-    [SerializeField]
-    private TMP_Text team2ScorePrevious;
-
-    [SerializeField]
     private TMP_Text team1Total;
 
     [SerializeField]
     private TMP_Text team2Total;
-
-    [SerializeField]
-    private GameObject nilScore;
-
-    [SerializeField]
-    private TMP_Text team1NilScore;
-
-    [SerializeField]
-    private TMP_Text team2NilScore;
-
-    [SerializeField]
-    private GameObject nilPenalty;
-
-    [SerializeField]
-    private TMP_Text team1NilPenalty;
-
-    [SerializeField]
-    private TMP_Text team2NilPenalty;
 
     [Header("Buttons")]
     [SerializeField]
@@ -137,12 +95,12 @@ public class ScoringScreen : MonoBehaviour
 
         playAgainButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            activePlayer.Blind = false;
+            //activePlayer.Blind = false;
             manager.NewGame();
         });
         playAgainBlindButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            activePlayer.Blind = true;
+            //activePlayer.Blind = true;
             manager.NewGame();
         });
         resetButton.onClick.AddListener(() =>
@@ -170,28 +128,20 @@ public class ScoringScreen : MonoBehaviour
             team1Bags.text = r1.Bags.ToString();
             team1Stucks.text = r1.GamesWithOutTricks.ToString();
             team1BagScore.text = r1.BagsScore.ToString();
-            team1BagsPrevious.text = r1.BagsPreviousRound.ToString();
             team1CombinedBid.text = r1.Bid.ToString();
-            team1Score.text = r1.Score.ToString();
-            team1ScorePrevious.text = r1.ScoreLastRound.ToString();
             team1SuccessfulBid.text = r1.TricksScore.ToString();
             team1Total.text = r1.ScoreTotal.ToString();
             team1TricksTaken.text = r1.Tricks.ToString();
-            team1TotalBags.text = r1.BagsTotal.ToString();
 
             var r2 = manager.Team2;
 
             team2Bags.text = r2.Bags.ToString();
             team2Stucks.text = r2.GamesWithOutTricks.ToString();
             team2BagScore.text = r2.BagsScore.ToString();
-            team2BagsPrevious.text = r2.BagsPreviousRound.ToString();
             team2CombinedBid.text = r2.Bid.ToString();
-            team2ScorePrevious.text = r2.ScoreLastRound.ToString();
-            team2Score.text = r2.Score.ToString();
             team2SuccessfulBid.text = r2.TricksScore.ToString();
             team2Total.text = r2.ScoreTotal.ToString();
             team2TricksTaken.text = r2.Tricks.ToString();
-            team2TotalBags.text = r2.BagsTotal.ToString();
             
             playAgainBlindButton.gameObject.SetActive(r1.ScoreTotal < r2.ScoreTotal - 99);
 

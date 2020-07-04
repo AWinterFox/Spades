@@ -5,8 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Linq;
+using Photon.Pun;
 
-public class ScoringScreen : MonoBehaviour
+public class ScoringScreen : MonoBehaviourPun
 {
     [SerializeField]
     private TMP_Text team1CombinedBid;
@@ -114,189 +115,195 @@ public class ScoringScreen : MonoBehaviour
     [SerializeField]
     private TMP_Text winnerText;
 
-    [SerializeField]
-    private Player activePlayer;
-
-    [SerializeField]
-    private AudioSource scoreBoard;
-
-    public static int gamestarted { get; set; } = 0;
-
     private GameManager manager;
 
     private void Awake()
     {
         manager = FindObjectOfType<GameManager>();
 
-        if(gamestarted == 0){
-            gamestarted = 1;
-        }else{
-            scoreBoard.Play();
-        }
-        
-
         playAgainButton.onClick.AddListener(() => {
-            gameObject.SetActive(false);
-            activePlayer.Blind = false;
+            TurnOff();
             manager.NewGame();
         });
         playAgainBlindButton.onClick.AddListener(() => {
-            gameObject.SetActive(false);
-            activePlayer.Blind = true;
+            TurnOff();
             manager.NewGame();
         });
         resetButton.onClick.AddListener(() =>
         {
-            gameObject.SetActive(false);
+            TurnOff();
             manager.ResetGame();
         });
         mainMenuButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("Menu");
+            GameManager.GotoMainMenu();
         });
-        mainMenuButton.gameObject.SetActive(false);
 
         nextBracketButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("Game");
         });
+
+
+        mainMenuButton.gameObject.SetActive(false);
         nextBracketButton.gameObject.SetActive(false);
 
-        manager.OnFinished.AddListener(() =>
+
+    }
+
+    [PunRPC]
+    public void TurnOnScoreScreen(Result team1, Result team2)
+    {
+        //Team 1
+        var r1 = team1;
+
+        team1Bags.text = r1.Bags.ToString();
+        team1Stucks.text = r1.GamesWithOutTricks.ToString();
+        team1BagScore.text = r1.BagsScore.ToString();
+        team1BagsPrevious.text = r1.BagsPreviousRound.ToString();
+        team1CombinedBid.text = r1.Bid.ToString();
+        team1Score.text = r1.Score.ToString();
+        team1ScorePrevious.text = r1.ScoreLastRound.ToString();
+        team1SuccessfulBid.text = r1.TricksScore.ToString();
+        team1Total.text = r1.ScoreTotal.ToString();
+        team1TricksTaken.text = r1.Tricks.ToString();
+        team1TotalBags.text = r1.BagsTotal.ToString();
+
+        var r2 = team2;
+
+        team2Bags.text = r2.Bags.ToString();
+        team2Stucks.text = r2.GamesWithOutTricks.ToString();
+        team2BagScore.text = r2.BagsScore.ToString();
+        team2BagsPrevious.text = r2.BagsPreviousRound.ToString();
+        team2CombinedBid.text = r2.Bid.ToString();
+        team2ScorePrevious.text = r2.ScoreLastRound.ToString();
+        team2Score.text = r2.Score.ToString();
+        team2SuccessfulBid.text = r2.TricksScore.ToString();
+        team2Total.text = r2.ScoreTotal.ToString();
+        team2TricksTaken.text = r2.Tricks.ToString();
+        team2TotalBags.text = r2.BagsTotal.ToString();
+
+        //playAgainBlindButton.gameObject.SetActive(r1.ScoreTotal < r2.ScoreTotal - 99);
+
+        if (r1.ScoreTotal >= GameManager.WinScore || r2.Lost)
         {
-            //Team 1
-            var r1 = manager.Team1;
+            winnerLabel.SetActive(true);
+            winnerText.text = "Team 1 Wins";
+            //if (GameManager.CurrentBracket != null)
+            //{
+            //    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team1;
+            //}
 
-            team1Bags.text = r1.Bags.ToString();
-            team1Stucks.text = r1.GamesWithOutTricks.ToString();
-            team1BagScore.text = r1.BagsScore.ToString();
-            team1BagsPrevious.text = r1.BagsPreviousRound.ToString();
-            team1CombinedBid.text = r1.Bid.ToString();
-            team1Score.text = r1.Score.ToString();
-            team1ScorePrevious.text = r1.ScoreLastRound.ToString();
-            team1SuccessfulBid.text = r1.TricksScore.ToString();
-            team1Total.text = r1.ScoreTotal.ToString();
-            team1TricksTaken.text = r1.Tricks.ToString();
-            team1TotalBags.text = r1.BagsTotal.ToString();
+            //var tournament = GameManager.Tournament;
+            //if (GameManager.Tournament != null)
+            //{
+            //    var currentRound = GameManager.Tournament.Rounds.Last();
 
-            var r2 = manager.Team2;
+            //    if (currentRound.Count < 1)
+            //    {
+            //        winnerText.text = "Team 1 Wins the tournament";
+            //        SetEndButton(false);
+            //    }
+            //    else
+            //    {
+            //        SetEndButton(true);
+            //        var newRound = new List<Bracket>();
+            //        for (int i = 0; i < currentRound.Count / 2; i++)
+            //        {
+            //            var index = i;
+            //            var bracket1 = currentRound[index];
+            //            var bracket2 = currentRound[index + 2];
 
-            team2Bags.text = r2.Bags.ToString();
-            team2Stucks.text = r2.GamesWithOutTricks.ToString();
-            team2BagScore.text = r2.BagsScore.ToString();
-            team2BagsPrevious.text = r2.BagsPreviousRound.ToString();
-            team2CombinedBid.text = r2.Bid.ToString();
-            team2ScorePrevious.text = r2.ScoreLastRound.ToString();
-            team2Score.text = r2.Score.ToString();
-            team2SuccessfulBid.text = r2.TricksScore.ToString();
-            team2Total.text = r2.ScoreTotal.ToString();
-            team2TricksTaken.text = r2.Tricks.ToString();
-            team2TotalBags.text = r2.BagsTotal.ToString();
-            
-            playAgainBlindButton.gameObject.SetActive(r1.ScoreTotal < r2.ScoreTotal - 99);
+            //            if (bracket1.Winner == null)
+            //            {
+            //                bracket1.Winner = Random.Range(0, 2) == 0 ? bracket1.Team1 : bracket1.Team2;
+            //            }
+            //            if (bracket2.Winner == null)
+            //            {
+            //                bracket2.Winner = Random.Range(0, 2) == 0 ? bracket2.Team1 : bracket2.Team2;
+            //            }
 
-            if (r1.ScoreTotal >= GameManager.WinScore || r2.Lost)
-            {
-                Debug.Log("Trigger 2");
-                winnerLabel.SetActive(true);
-                winnerText.text = "Team 1 Wins";
-                if(GameManager.CurrentBracket != null)
-                {
-                    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team1;
-                }
+            //            var newBracket = new Bracket
+            //            {
+            //                Team1 = bracket1.Winner,
+            //                Team2 = bracket2.Winner
+            //            };
 
-                var tournament = GameManager.Tournament;
-                if (GameManager.Tournament != null)
-                {
-                    var currentRound = GameManager.Tournament.Rounds.Last();
-                    
-                    if (currentRound.Count < 1)
-                    {
-                        Debug.Log("Wam");
-                        winnerText.text = "Team 1 Wins the tournament";
-                        SetEndButton(false);
-                    }
-                    else
-                    {
-                        SetEndButton(true);
-                        Debug.Log("Bam");
-                        var newRound = new List<Bracket>();
-                        for (int i = 0; i < currentRound.Count / 2; i++)
-                        {
-                            var index = i;
-                            var bracket1 = currentRound[index];
-                            var bracket2 = currentRound[index + 2];
+            //            if (newBracket.Team2 == GameManager.Tournament.PlayerTeam)
+            //            {
+            //                newBracket.Team2 = newBracket.Team1;
+            //                newBracket.Team1 = GameManager.Tournament.PlayerTeam;
+            //            }
 
-                            if (bracket1.Winner == null)
-                            {
-                                bracket1.Winner = Random.Range(0, 2) == 0 ? bracket1.Team1 : bracket1.Team2;
-                            }
-                            if (bracket2.Winner == null)
-                            {
-                                bracket2.Winner = Random.Range(0, 2) == 0 ? bracket2.Team1 : bracket2.Team2;
-                            }
 
-                            var newBracket = new Bracket
-                            {
-                                Team1 = bracket1.Winner,
-                                Team2 = bracket2.Winner
-                            };
+            //            newRound.Add(newBracket);
+            //        }
+            //        Debug.Log("Bracket: " + newRound);
+            //        GameManager.Tournament.Rounds.Add(newRound);
 
-                            if (newBracket.Team2 == GameManager.Tournament.PlayerTeam)
-                            {
-                                newBracket.Team2 = newBracket.Team1;
-                                newBracket.Team1 = GameManager.Tournament.PlayerTeam;
-                            }
+            //        var bracket = tournament.Rounds.First().First(b => b.Team1 == tournament.PlayerTeam || b.Team2 == tournament.PlayerTeam);
+            //        var otherTeam = bracket.Team1 == tournament.PlayerTeam ? bracket.Team2 : bracket.Team1;
 
-                            
-                            newRound.Add(newBracket);
-                        }
-                        Debug.Log("Bracket: "+newRound);
-                        GameManager.Tournament.Rounds.Add(newRound);
+            //        //GameManager.PlayerNames = new List<string>
+            //        //{
+            //        //    tournament.PlayerTeam.Player1,
+            //        //    otherTeam.Player1,
+            //        //    tournament.PlayerTeam.Player2,
+            //        //    otherTeam.Player2
+            //        //};
 
-                        var bracket = tournament.Rounds.First().First(b => b.Team1 == tournament.PlayerTeam || b.Team2 == tournament.PlayerTeam);
-                        var otherTeam = bracket.Team1 == tournament.PlayerTeam ? bracket.Team2 : bracket.Team1;
 
-                        //GameManager.PlayerNames = new List<string>
-                        //{
-                        //    tournament.PlayerTeam.Player1,
-                        //    otherTeam.Player1,
-                        //    tournament.PlayerTeam.Player2,
-                        //    otherTeam.Player2
-                        //};
-                        
-                        
-                    }
-                }
-                else
-                {
-                    SetEndButton(true);
-                }
+            //    }
+            //}
+            //else
+            //{
+                
+            //}
 
-            }
-            else if (r1.Lost){
-                Debug.Log("Trigger 1");
-                winnerLabel.SetActive(true);
-                winnerText.text = "Team 2 Wins";
-                if (GameManager.CurrentBracket != null)
-                {
-                    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team2;
-                }
+        }
+        else if (r1.Lost)
+        {
+            winnerLabel.SetActive(true);
+            winnerText.text = "Team 2 Wins";
+            //if (GameManager.CurrentBracket != null)
+            //{
+            //    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team2;
+            //}
 
-                SetEndButton(true);
-            }
-            else if (r2.ScoreTotal >= GameManager.WinScore || r1.Lost)
-            {
-                winnerLabel.SetActive(true);
-                winnerText.text = "Team 2 Wins";
-                if (GameManager.CurrentBracket != null)
-                {
-                    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team2;
-                }
+            //SetEndButton(true);
+        }
+        else if (r2.ScoreTotal >= GameManager.WinScore || r1.Lost)
+        {
+            winnerLabel.SetActive(true);
+            winnerText.text = "Team 2 Wins";
+            //if (GameManager.CurrentBracket != null)
+            //{
+            //    GameManager.CurrentBracket.Winner = GameManager.CurrentBracket.Team2;
+            //}
 
-                SetEndButton(false);
-            }
-        });
+            //SetEndButton(false);
+        }
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("TurnOnScoreScreen", RpcTarget.Others);
+
+            SetEndButton(true);
+
+        }
+
+        gameObject.SetActive(true);
+    }
+
+    [PunRPC]
+    public void TurnOff()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("TurnOff", RpcTarget.Others);
+        }
+
+        gameObject.SetActive(false);
     }
 
     private void SetEndButton(bool win)

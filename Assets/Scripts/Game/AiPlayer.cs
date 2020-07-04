@@ -98,6 +98,11 @@ public class AiPlayer : MonoBehaviour
             }
         }
 
+        if(playable.Count == 0)
+        {
+            Debug.Break();
+        }
+
         if (player.Position == 1)
         {
             for (int i = 0; i < playable.Count(); i++)
@@ -140,9 +145,7 @@ public class AiPlayer : MonoBehaviour
             var best = playable.LastOrDefault();
             var worst = playable.FirstOrDefault();
 
-
-                var iHaveHighest = remainingCards.Any(r => r.Value > best.Value && r.Suit == best.Suit);
-
+            var iHaveHighest = remainingCards.Any(r => r.Value > best.Value && r.Suit == best.Suit);
 
             if(haveMadeBid)
             {

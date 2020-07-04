@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPun
 {
@@ -373,6 +374,7 @@ public class GameManager : MonoBehaviourPun
                 Players[3].Score = Team2.ScoreTotal;
 
                 OnFinished.Invoke();
+                scoring.TurnOnScoreScreen(Team1, Team2);
 
                 if (Tournament != null)
                 {
@@ -705,6 +707,13 @@ public class GameManager : MonoBehaviourPun
         {
             result.Tricks += player.Tricks;
         }
+    }
+
+    public static void GotoMainMenu()
+    {
+        PhotonNetwork.LeaveRoom();
+
+        SceneManager.LoadScene("Menu");
     }
 }
 

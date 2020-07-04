@@ -25,6 +25,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource loseGame;
 
+    [SerializeField]
+    private AudioSource scoreScreen;
+
     private void Start()
     {
         var manager = FindObjectOfType<GameManager>();
@@ -72,6 +75,11 @@ public class SoundManager : MonoBehaviour
         manager.OnGameWon.AddListener(() =>
         {
             winSound.Play();
+        });
+
+        manager.OnFinished.AddListener(() =>
+        {
+            scoreScreen.Play();
         });
 
     }

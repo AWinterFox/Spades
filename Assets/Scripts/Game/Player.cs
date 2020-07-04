@@ -236,7 +236,7 @@ public class Player : MonoBehaviourPun, IPunObservable
             Bid = Mathf.Clamp(bid,1,13);
         }
         
-        StartCoroutine(ISetBid(bid));
+        StartCoroutine(ISetBid(Bid.Value));
         nameText.text = $"{playerName} ({Bid}) {Tricks}";
 
         foreach (var card in cards)

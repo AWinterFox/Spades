@@ -73,9 +73,6 @@ public class ScoringScreen : MonoBehaviour
     private TMP_Text winnerText;
 
     [SerializeField]
-    private Player activePlayer;
-
-    [SerializeField]
     private AudioSource scoreBoard;
 
     public static int gamestarted { get; set; } = 0;
@@ -95,12 +92,12 @@ public class ScoringScreen : MonoBehaviour
 
         playAgainButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            //activePlayer.Blind = false;
+            FindObjectOfType<ActivePlayer>().GetComponent<Player>().Blind = false;
             manager.NewGame();
         });
         playAgainBlindButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            //activePlayer.Blind = true;
+            FindObjectOfType<ActivePlayer>().GetComponent<Player>().Blind = true;
             manager.NewGame();
         });
         resetButton.onClick.AddListener(() =>

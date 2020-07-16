@@ -95,7 +95,7 @@ public class ActivePlayer : MonoBehaviour
 
     private void OnSortCards()
     {
-        player.FlipCards(player.Blind ? CardFace.Back : CardFace.Front);
+        player.FlipCards(blindBid.bblind ? CardFace.Back : CardFace.Front);
     }
 
     private void OnSelect(InputAction.CallbackContext obj)
@@ -187,4 +187,9 @@ public class ActivePlayer : MonoBehaviour
 
     [System.Serializable]
     public class CardEvent : UnityEvent<Card> { }
+}
+
+public class blindBid
+{
+    public static bool bblind = false;
 }

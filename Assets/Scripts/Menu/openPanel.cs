@@ -7,7 +7,9 @@ public class openPanel : MonoBehaviour
 {
     [SerializeField]
     private GameObject panel;
-    private Button button;
+
+    [SerializeField]
+    GameObject notice;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,11 @@ public class openPanel : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void clickandRick(string status)
+    {
+        notice.GetComponent<UnityEngine.UI.Text>().text = status;
+        panel.SetActive(true);
     }
 }

@@ -604,7 +604,7 @@ public class GameManager : MonoBehaviourPun
             {
                 result.TricksScore += result.Bid * pointsPerBidTrick;
 
-                if (p1.Blind)
+                if (p1.Blind || blindBid.bblind)
                 {
                     result.TricksScore += p1.Bid.Value * pointsPerBidTrick;
                     result.TricksScore += p2.Bid.Value * pointsPerBidTrick;

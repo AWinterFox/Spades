@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
-
+using System.Timers;
 
 public class showAd : MonoBehaviour
 {
@@ -17,6 +17,8 @@ public class showAd : MonoBehaviour
 
     string myPlacementId = "rewardedVideo";
     bool testMode = false;
+    private static Timer timer;
+
 
     // Initialize the Ads listener and service:
     void Start()
@@ -32,7 +34,7 @@ public class showAd : MonoBehaviour
         if (showResult == ShowResult.Finished)
         {
             Debug.Log("Completed");
-            TokenManager.AddTokens(100);
+            
 
             // Reward the user for watching the ad to completion.
         }
@@ -51,8 +53,18 @@ public class showAd : MonoBehaviour
         // If the ready Placement is rewarded, show the ad:
         if (placementId == myPlacementId)
         {
+            timer = new System.Timers.Timer(10000);
+            // Hook up the Elapsed event for the timer.
+            timer.Elapsed += OnTimedEvent;
+            timer.Enabled = true;
             Advertisement.Show(myPlacementId);
         }
+    }
+
+    private static void OnTimedEvent(object source, ElapsedEventArgs e)
+    {
+        timer.Stop();
+        TokenManager.AddTokens(100);
     }
 
     public void OnUnityAdsDidError(string message)

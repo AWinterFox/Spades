@@ -56,9 +56,7 @@ public class ScoringScreen : MonoBehaviour
 
     [SerializeField]
     private Button playAgainBlindButton;
-
-    [SerializeField]
-    private Button resetButton;
+   
 
     [SerializeField]
     private Button mainMenuButton;
@@ -95,23 +93,19 @@ public class ScoringScreen : MonoBehaviour
 
         playAgainButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            //activePlayer.Blind = false;
+            blindBid.bblind = false;
             manager.NewGame();
         });
         playAgainBlindButton.onClick.AddListener(() => {
             gameObject.SetActive(false);
-            //activePlayer.Blind = true;
+            activePlayer.Blind = true;
+            blindBid.bblind = true;
             manager.NewGame();
         });
-        resetButton.onClick.AddListener(() =>
-        {
-            gameObject.SetActive(false);
-            manager.ResetGame();
-        });
+
         mainMenuButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("Menu");
-            Photon.Pun.PhotonNetwork.LeaveRoom();
         });
         mainMenuButton.gameObject.SetActive(false);
 
@@ -226,6 +220,7 @@ public class ScoringScreen : MonoBehaviour
 
             }
             else if (r1.Lost){
+                Debug.Log("Trigger 1");
                 winnerLabel.SetActive(true);
                 winnerText.text = "Team 2 Wins";
                 if (GameManager.CurrentBracket != null)
@@ -249,11 +244,6 @@ public class ScoringScreen : MonoBehaviour
         });
     }
 
-    private void TurnOff()
-    {
-
-    }
-
     private void SetEndButton(bool win)
     {
         if(GameManager.Tournament != null && win)
@@ -269,6 +259,5 @@ public class ScoringScreen : MonoBehaviour
         }
         
         playAgainButton.gameObject.SetActive(false);
-        resetButton.gameObject.SetActive(false);
     }
 }

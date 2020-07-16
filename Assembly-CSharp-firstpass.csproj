@@ -282,9 +282,6 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>E:/Spades-Master/Spades/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>E:/Spades-Master/Spades/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>E:/Spades-Master/Spades/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>

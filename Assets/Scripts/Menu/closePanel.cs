@@ -18,6 +18,12 @@ public class closePanel : MonoBehaviour
         panel.SetActive(false);
     }
 
+    public void ClickAndReward()
+    {
+        
+        panel.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {

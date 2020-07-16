@@ -413,7 +413,7 @@ public class AiPlayer : MonoBehaviour
             remainingCards.Add(card);
         }
 
-        if (player.Partner.Blind)
+        if (blindBid.bblind)
         {
             player.SetBid(0, true);
             yield break;

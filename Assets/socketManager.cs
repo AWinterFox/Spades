@@ -22,22 +22,40 @@ public class socketManager : MonoBehaviour
         socket.On("connect", Connected);
     }
 
-    public void Emit(string room, string json, bool loginstuff, string jsonn = null)
+    public void On(string key, Action<SocketIOEvent> action)
     {
+        socket.On(key, action);
+    }
 
+    public void Off(string key, Action<SocketIOEvent> action)
+    {
+        socket.Off(key, action);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="room"></param>
+    /// <param name="data"></param>
+    /// <param name="loginstuff"></param>
+    /// <param name="jsonn"></param>
+    public void Emit<T>(string room, T data, bool loginstuff, string jsonn = null)
+    {
         if (loginstuff)
         {
             socket.Emit(room, new JSONObject("ff"));
         }
         else
         {
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
             socket.Emit(room, new JSONObject(json));
         }
-
     }
 
     void update(SocketIOEvent e)
     {
+
     }
 
     void Connected(SocketIOEvent e)

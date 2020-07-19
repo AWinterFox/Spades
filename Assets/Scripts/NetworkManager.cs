@@ -37,9 +37,16 @@ public class NetworkManager : MonoBehaviour
     private void OnGameStart(SocketIO.SocketIOEvent e){
         loadingScreen.SetActive(false);
 
-        matchId = e.data[0].ToString();
-        
-        Debug.Log(matchId);
+        matchId = e.data["matchId"].str;
+
+        Debug.Log(e.data.Print());
+
+        //var players = e.data["players"].list;
+
+        //foreach (var player in players)
+        //{
+        //    player.
+        //}
     }
 
     private void OnGetBid(SocketIO.SocketIOEvent e)

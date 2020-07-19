@@ -16,7 +16,7 @@ public class BidScreen : MonoBehaviour
 
     private void Awake()
     {
-        manager = GetComponent<GameManager>();
+        manager = FindObjectOfType<GameManager>();
 
         for (int i = 0; i < buttons.Length; i++)
         {

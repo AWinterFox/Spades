@@ -10,6 +10,8 @@ public class NetworkManager : MonoBehaviour
 
     private string matchId { get; set; }
 
+    public List<MessagePlayer> Players { get; private set; }
+
     private socketManager sockets
     {
         get { return socketManager.Current; }
@@ -98,9 +100,22 @@ public class NetworkManager : MonoBehaviour
         public bool PrivateLobby { get; set; }
     }
 
-    public class MessageStartGameResponse
+    public class MessageStartGameResponse : Message
     {
+        [JsonProperty("playerPosition")]
+        public int PlayerPosition { get; set; }
 
+        [JsonProperty("players")]
+        public List<object> Players { get; set; }
+    }
+
+    public class MessagePlayer
+    {
+        [JsonProperty("Name")]
+        public string Name { get; set; }
+
+        [JsonProperty("Position")]
+        public int Position { get; set; }
     }
 
     public class MessageReleaseKraken : Message

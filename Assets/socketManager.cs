@@ -18,8 +18,6 @@ public class socketManager : MonoBehaviour
     {
         socketManager.Current = this;
         socket = SocketIOP.GetComponent<SocketIOComponent>();
-
-        socket.On("connect", Connected);
     }
 
     public void On(string key, Action<SocketIOEvent> action)
@@ -42,25 +40,24 @@ public class socketManager : MonoBehaviour
     /// <param name="jsonn"></param>
     public void Emit<T>(string room, T data, bool loginstuff, string jsonn = null)
     {
-        if (loginstuff)
-        {
-            socket.Emit(room, new JSONObject("ff"));
-        }
-        else
-        {
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-            socket.Emit(room, new JSONObject(json));
-        }
+        string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+        socket.Emit(room, new JSONObject(json));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="room"></param>
+    /// <param name="loginstuff"></param>
+    /// <param name="jsonn"></param>
+    public void Emit(string room, bool loginstuff, string jsonn = null)
+    {
+        socket.Emit(room);
     }
 
     void update(SocketIOEvent e)
     {
 
-    }
-
-    void Connected(SocketIOEvent e)
-    {
-        Debug.Log("Connected");
     }
 
     public void TestClose(SocketIOEvent e)

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Master : MonoBehaviourPunCallbacks
+public class Master : MonoBehaviour
 {
     private static Master _instance;
 
@@ -48,24 +48,18 @@ public class Master : MonoBehaviourPunCallbacks
     {
 
         _instance.StartCoroutine(_instance.LoadGameI(players));
-        PhotonNetwork.LoadLevel(_instance.gameScene);
+        SceneManager.LoadScene(_instance.gameScene);
     }
 
     private IEnumerator LoadGameI(PlayerInfo[] players)
     {
-        Debug.Log("Called");
-        if (PhotonNetwork.IsMasterClient)
+        Debug.Log("We are master.");
+        while (currentScene != gameScene)
         {
-            Debug.Log("We are master.");
-            while(currentScene != gameScene)
-            {
-                yield return null;
-            }
-
-            var manager = FindObjectOfType<GameManager>();
-
-            manager.StartGame(players);
+            yield return null;
         }
+
+        var manager = FindObjectOfType<GameManager>();
     }
 
     private void SceneLoaded(Scene scene, LoadSceneMode mode)

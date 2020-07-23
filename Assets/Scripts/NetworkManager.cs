@@ -2,15 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using UnityEngine.Events;
 
 public class NetworkManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject loadingScreen;
 
-    private string matchId { get; set; }
+    private static string matchId { get; set; }
+
+    private static string clientId { get; set; }
 
     public List<MessagePlayer> Players { get; private set; }
+
+    #region Public events
+    [SerializeField]
+    private UnityEvent EventWelcome = new UnityEvent();
+
+    [SerializeField]
+    private UnityEvent EventGameStart = new UnityEvent();
+
+    #endregion
 
     private socketManager sockets
     {
@@ -20,6 +32,13 @@ public class NetworkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!string.IsNullOrEmpty(clientId))
+        {
+            EventWelcome.Invoke();
+        }
+
+        sockets.On("connected", OnConnected);
+        sockets.On("welcome", OnWelcome);
         sockets.On("GameStart", OnGameStart);
         sockets.On("GetBid", OnGetBid);
         sockets.On("OfferBlind", OnOfferBlind);
@@ -28,6 +47,8 @@ public class NetworkManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        sockets.Off("connected", OnConnected);
+        sockets.Off("welcome", OnWelcome);
         sockets.Off("GameStart", OnGameStart);
         sockets.Off("GetBid", OnGetBid);
         sockets.Off("OfferBlind", OnOfferBlind);
@@ -36,19 +57,26 @@ public class NetworkManager : MonoBehaviour
 
     #region Receive
 
+    private void OnConnected(SocketIO.SocketIOEvent e)
+    {
+        sockets.Emit("welcome", false);
+        Debug.Log("Connected");
+    }
+
+    private void OnWelcome(SocketIO.SocketIOEvent e)
+    {
+        clientId = e.data["id"].str;
+        Debug.Log($"Welcome {clientId}");
+        EventWelcome.Invoke();
+    }
+
     private void OnGameStart(SocketIO.SocketIOEvent e){
-        loadingScreen.SetActive(false);
-
-        matchId = e.data["matchId"].str;
-
+        
         Debug.Log(e.data.Print());
 
-        //var players = e.data["players"].list;
+        matchId = e.data["matchid"].str;
 
-        //foreach (var player in players)
-        //{
-        //    player.
-        //}
+        Master.LoadGame(null);
     }
 
     private void OnGetBid(SocketIO.SocketIOEvent e)
@@ -75,6 +103,7 @@ public class NetworkManager : MonoBehaviour
         Debug.Log($"Starting game {gameType}");
         sockets.Emit("findRoom", new MessageStartGame
         {
+            ClientId = clientId,
             GameType = gameType
         }, false);
         sockets.Emit("releaseTheKraken", new MessageReleaseKraken
@@ -93,6 +122,9 @@ public class NetworkManager : MonoBehaviour
 
     public class MessageStartGame : Message
     {
+        [JsonProperty("clientid")]
+        public string ClientId { get; set; }
+
         [JsonProperty("gametype")]
         public string GameType { get; set; }
 
